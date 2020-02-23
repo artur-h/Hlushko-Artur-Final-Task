@@ -261,7 +261,7 @@ li {
 .first-screen__discount {
   font-family: "Times New Roman", serif;
   color: #757575;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 /* === / FIRST-SCREEN === */
@@ -285,7 +285,7 @@ li {
 .offer__subtitle {
   font-family: "Times New Roman", serif;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .offer__best {
@@ -369,3 +369,96 @@ li {
   text-align: center;
 }
 /* === / ARRIVALS === */
+
+/* === INFO === */
+.info__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 34px 0 112px;
+}
+
+.info__links-wrapper {
+  display: flex;
+  max-width: 590px;
+  width: 100%;
+  letter-spacing: 0.03em;
+}
+
+.info__links {
+  margin-right: 165px;
+  max-width: 100px;
+  width: 100%;
+}
+
+.info__customer-care {
+  min-width: 130px;
+}
+
+.info__title {
+  margin-bottom: 45px;
+}
+
+.info__title--margin {
+  margin-bottom: 18px;
+}
+
+.info__title--margin-phone {
+  margin-bottom: 15px;
+}
+
+.info__item-link,
+.info__tweet-us,
+.info__phone-number {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.info__item:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.info__contact-info {
+  padding-left: 58px;
+  max-width: 590px;
+  width: 100%;
+}
+
+.info__upper {
+  display: flex;
+  margin-bottom: 75px;
+  letter-spacing: 0.03em;
+}
+
+.info__questions {
+  margin-right: 108px;
+}
+
+.info__tweet,
+.info__socials {
+  display: flex;
+  align-items: center;
+}
+
+.info__tweet-questions {
+  margin-right: 10px;
+}
+
+.info__tweet-name {
+  font-weight: 700;
+}
+
+.info__advantage {
+  margin-bottom: 40px;
+  max-width: 305px;
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #757575;
+  line-height: 1.8;
+}
+
+.info__facebook {
+  margin-right: 24px;
+}
+/* === / INFO === */
