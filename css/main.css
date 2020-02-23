@@ -27,6 +27,7 @@ li {
 
 .container {
   max-width: 1180px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -117,6 +118,10 @@ li {
 
 .product__name {
   letter-spacing: 0.015em;
+}
+
+.product__price {
+  font-weight: 400;
 }
 
 .button {
@@ -334,3 +339,33 @@ li {
   letter-spacing: 0.015em;
 }
 /* === / OFFER === */
+
+/* === ARRIVALS === */
+.arrivals {
+  display: flex;
+}
+
+.arrivals__inner {
+  padding: 50px 0 100px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.arrivals__product-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.arrivals__title {
+  margin-bottom: 92px;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.arrivals__action {
+  text-align: center;
+}
+/* === / ARRIVALS === */
