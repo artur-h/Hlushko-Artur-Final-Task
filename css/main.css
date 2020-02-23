@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -19,14 +25,19 @@ li {
 }
 
 .container {
-  width: 1180px;
+  max-width: 1180px;
   margin: 0 auto;
+}
+
+.container--wider {
+  max-width: 1300px;
+  position: relative;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0 15px;
+  padding: 15px 0 12px;
 }
 
 .header__logo {
@@ -36,12 +47,16 @@ li {
 .header__wrapper {
   display: flex;
   align-items: center;
+  position: relative;
+  top: -4px;
 }
 
 .header__sign-up {
   margin-right: 56px;
   font-size: 12px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
 }
 
 .header__bag-icon {
@@ -52,11 +67,13 @@ li {
   font-size: 12px;
   line-height: 18px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 13px;
 }
 
 .menu {
@@ -66,6 +83,7 @@ li {
 
 .menu__item {
   font-size: 13px;
+  letter-spacing: 0.01em;
 }
 
 .menu__item:not(:last-child) {
@@ -77,8 +95,8 @@ li {
 }
 
 .search__input {
-  padding: 8px 20px 10px 0;
-  width: 100px;
+  padding: 10px 20px 10px 0;
+  width: 120px;
   border: none;
   border-bottom: 2px solid #e5e5e5;
   font-size: 12px;
@@ -96,4 +114,85 @@ li {
   width: 13px;
   height: 13px;
   background-image: url("../img/search-icon.png");
+}
+
+.first-screen {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.first-screen__wrapper {
+  position: relative;
+}
+
+.first-screen__text {
+  position: absolute;
+  top: 10%;
+  right: 16%;
+  text-align: center;
+}
+
+.first-screen__wrapper:first-child {
+  border-right: 1px solid #e5e5e5;
+}
+
+.first-screen__img {
+  height: 100%;
+  width: 100%;
+}
+
+.first-screen__product-name {
+  margin-bottom: 9px;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+}
+
+.first-screen__discount {
+  font-family: "Times New Roman", serif;
+  color: #757575;
+  font-weight: 300;
+  text-align: center;
+}
+
+.container--full-width {
+  position: relative;
+}
+
+.container--full-width {
+  display: flex;
+}
+
+.lines {
+  position: relative;
+  flex-shrink: 10000;
+  width: 100%;
+  height: 389px;
+}
+
+.lines__left,
+.lines__right {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+}
+
+.lines__left--top,
+.lines__right--top {
+  top: 0;
+}
+
+.lines__left--bottom,
+.lines__right--bottom {
+  bottom: 0;
+}
+
+.lines__left--top,
+.lines__left--bottom {
+  background: linear-gradient(270deg, #e5e5e5, #ffffff);
+}
+
+.lines__right--top,
+.lines__right--bottom {
+  background: linear-gradient(90deg, #e5e5e5, #ffffff);
 }
