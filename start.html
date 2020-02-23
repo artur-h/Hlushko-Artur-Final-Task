@@ -10,84 +10,127 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <a href="#" class="header__logo">
-        <span class="header__logo-inner">
-          Template
-        </span>
-      </a>
-      <div class="header__wrapper">
-        <a href="#" class="header__sign-up">
-          <span class="header__sign-up-inner">
-            E-mail sign up
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">
+          <span class="header__logo-inner">
+            Template
           </span>
         </a>
-        <a href="#" class="header__bag-icon">
-          <img class="header__bag-icon-img" src="img/bag-icon.png" alt="Shopping bag">
-        </a>
-        <a href="#" class="header__bag-quantity">
-          <div class="header__bag--inner">Bag (0)</div>
-        </a>
-      </div>
-    </header>
-  </div>
-
-  <div class="container">
-    <nav class="nav">
-      <ul class="menu">
-        <li class="menu__item">Women</li>
-        <li class="menu__item">Men</li>
-        <li class="menu__item">Handbags</li>
-        <li class="menu__item">Accessories</li>
-        <li class="menu__item">Sale</li>
-        <li class="menu__item">New Arrivals</li>
-        <li class="menu__item">Clearance</li>
-        <li class="menu__item">Store Locator</li>
-      </ul>
-      <div class="search">
-        <div class="search__inner">
-          <input class="search__input" type="text" placeholder="Style Name">
+        <div class="header__wrapper">
+          <a href="#" class="header__sign-up">
+            <span class="header__sign-up-inner">
+              E-mail sign up
+            </span>
+          </a>
+          <a href="#" class="header__bag-icon">
+            <img class="header__bag-icon-img" src="img/bag-icon.png" alt="Shopping bag">
+          </a>
+          <a href="#" class="header__bag-quantity">
+            <div class="header__bag--inner">Bag (0)</div>
+          </a>
         </div>
       </div>
-    </nav>
-  </div>
 
-  <div class="container--full-width">
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__item">Women</li>
+          <li class="menu__item">Men</li>
+          <li class="menu__item">Handbags</li>
+          <li class="menu__item">Accessories</li>
+          <li class="menu__item">Sale</li>
+          <li class="menu__item">New Arrivals</li>
+          <li class="menu__item">Clearance</li>
+          <li class="menu__item">Store Locator</li>
+        </ul>
+        <div class="search">
+          <div class="search__inner">
+            <input class="search__input" type="text" placeholder="Style Name">
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
+  <section class="first-screen">
     <div class="lines">
       <div class="lines__left lines__left--top"></div>
       <div class="lines__left lines__left--bottom"></div>
     </div>
 
-        <div class="container container--wider">
-          <section class="first-screen">
-            <div class="first-screen__wrapper">
-              <a href="#">
-                <img class="first-screen__img" src="img/nike-red.png" alt="Nike Red">
-                <div class="first-screen__text">
-                  <h2 class="first-screen__product-name">Nike Red</h2>
-                </div>
-              </a>
+    <div class="container container--wider">
+      <section class="first-screen__inner">
+        <div class="first-screen__wrapper">
+          <a href="#">
+            <img class="first-screen__img" src="img/nike-red.png" alt="Nike Red">
+            <div class="first-screen__text">
+              <h3 class="first-screen__product-name">Nike Red</h3>
             </div>
-            <div class="first-screen__wrapper">
-              <a href="#">
-                <img class="first-screen__img" src="img/caps-hats.png" alt="Caps & Hats">
-                <div class="first-screen__text">
-                  <h2 class="first-screen__product-name">Caps & Hats</h2>
-                  <i class="first-screen__discount">Sale -50%</i>
-                </div>
-              </a>
-            </div>
-          </section>
+          </a>
         </div>
+        <div class="first-screen__wrapper">
+          <a href="#">
+            <img class="first-screen__img" src="img/caps-hats.png" alt="Caps & Hats">
+            <div class="first-screen__text">
+              <h3 class="first-screen__product-name">Caps & Hats</h3>
+              <i class="first-screen__discount">Sale -50%</i>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
 
     <div class="lines">
       <div class="lines__right lines__right--top"></div>
       <div class="lines__right lines__right--bottom"></div>
     </div>
+  </section>
 
-  </div>
+  <section class="offer">
+    <div class="container">
+      <div class="offer__inner">
+        <div class="offer__heading">
+          <h2 class="offer__title">Best offer</h2>
+          <p class="offer__subtitle">
+            This offer is valid in-store and online. Prices displayed reflect this additional discount. This offer ends at 11:59 GMT on March 1st 2019
+          </p>
+        </div>
+        <div class="offer__best">
+          <div class="product product--new">
+            <img src="img/arrow.png" alt="Scroll up" class="arrow-top">
+            <img src="img/arrow.png" alt="Scroll up" class="arrow-bottom">
+            <a href="#">
+              <img src="img/products/Only_Skinny_Jeans.png" alt="Product" class="product__img product__img">
+              <div class="product__description">
+                <h4 class="product__name">Only Skinny Jeans</h4>
+                <div class="product__price"><span class="product__currency">&#163</span>65.50</div>
+              </div>
+            </a>
+          </div>
+          <img src="img/plus-sign.png" alt="Plus sign" class="offer__plus-sign">
+          <div class="product">
+            <img src="img/arrow.png" alt="Scroll up" class="arrow-top">
+            <img src="img/arrow.png" alt="Scroll up" class="arrow-bottom">
+            <a href="#">
+              <img src="img/products/Leavi's_Jeans_for_women.png" alt="Product" class="product__img">
+              <div class="product__description">
+                <h4 class="product__name">Levi’s Jeans for women</h4>
+                <div class="product__price"><span class="product__currency">&#163</span>95.50</div>
+              </div>
+            </a>
+          </div>
+          <img src="img/equality-sign.png" alt="Equality sign" class="offer__equality-sign">
+          <div class="offer__summary">
+            <div class="old-price"><span class="old-price__currency">&#163</span>161.00</div>
+            <div class="new-price"><span class="new-price__currency">&#163</span>146.00</div>
+            <a href="#" class="button">Add to bag</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>

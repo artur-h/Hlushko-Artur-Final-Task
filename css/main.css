@@ -1,3 +1,4 @@
+/* === COMMON === */
 *,
 *::after,
 *::before {
@@ -34,7 +35,104 @@ li {
   position: relative;
 }
 
-.header {
+.lines {
+  position: relative;
+  flex-shrink: 10000;
+  width: 100%;
+}
+
+.lines__left,
+.lines__right {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+}
+
+.lines__left--top,
+.lines__right--top {
+  top: 0;
+}
+
+.lines__left--bottom,
+.lines__right--bottom {
+  bottom: 0;
+}
+
+.lines__left--top,
+.lines__left--bottom {
+  background: linear-gradient(270deg, #e5e5e5, #ffffff);
+}
+
+.lines__right--top,
+.lines__right--bottom {
+  background: linear-gradient(90deg, #e5e5e5, #ffffff);
+}
+
+.product {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.arrow-top,
+.arrow-bottom {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow-top {
+  top: -54px;
+  transform: translateX(-50%);
+}
+
+.arrow-bottom {
+  bottom: -49px;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.product--new::after {
+  content: 'NEW';
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 15px;
+  padding: 6px 0;
+  width: 53px;
+  background-color: #f14a58;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.product__img {
+  margin-bottom: 25px;
+  height: 100%;
+  width: 100%;
+}
+
+.product__description {
+  font-size: 14px;
+}
+
+.product__name {
+  letter-spacing: 0.015em;
+}
+
+.button {
+  display: inline-block;
+  padding: 23px 0;
+  width: 339px;
+  border: 1px solid #e5e5e5;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+/* === / COMMON === */
+
+/* === HEADER === */
+.header__inner {
   display: flex;
   justify-content: space-between;
   padding: 15px 0 12px;
@@ -95,7 +193,7 @@ li {
 }
 
 .search__input {
-  padding: 10px 20px 10px 0;
+  padding: 10px 20px 10px 5px;
   width: 120px;
   border: none;
   border-bottom: 2px solid #e5e5e5;
@@ -115,8 +213,15 @@ li {
   height: 13px;
   background-image: url("../img/search-icon.png");
 }
+/* === / HEADER === */
 
+/* === FIRST-SCREEN === */
 .first-screen {
+  display: flex;
+  position: relative;
+}
+
+.first-screen__inner {
   display: flex;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
@@ -128,7 +233,7 @@ li {
 
 .first-screen__text {
   position: absolute;
-  top: 10%;
+  top: 8%;
   right: 16%;
   text-align: center;
 }
@@ -154,45 +259,78 @@ li {
   font-weight: 300;
   text-align: center;
 }
+/* === / FIRST-SCREEN === */
 
-.container--full-width {
-  position: relative;
+/* === OFFER === */
+.offer__inner {
+  padding: 45px 0 149px;
 }
 
-.container--full-width {
+.offer__heading {
+  margin-bottom: 124px;
+  text-align: center;
+}
+
+.offer__title {
+  margin-bottom: 15px;
+  font-size: 50px;
+  letter-spacing: 0.025em;
+}
+
+.offer__subtitle {
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.offer__best {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.lines {
+.offer__plus-sign,
+.offer__equality-sign {
   position: relative;
-  flex-shrink: 10000;
-  width: 100%;
-  height: 389px;
+  top: -50px;
 }
 
-.lines__left,
-.lines__right {
+.offer__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: -42px;
+  height: 325px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.old-price {
+  position: relative;
+  top: 93px;
+  left: -73px;
+  font-size: 26px;
+  color: #757575;
+  font-weight: 400;
+}
+
+.old-price::before {
+  content: '';
   position: absolute;
+  top: 12px;
+  left: -6px;
+  display: block;
   height: 1px;
-  width: 100%;
+  width: 100px;
+  background-color: #f25a66;
+  transform: rotate(-30deg);
 }
 
-.lines__left--top,
-.lines__right--top {
-  top: 0;
+.new-price {
+  position: relative;
+  bottom: -16px;
+  font-size: 34px;
+  letter-spacing: 0.015em;
 }
-
-.lines__left--bottom,
-.lines__right--bottom {
-  bottom: 0;
-}
-
-.lines__left--top,
-.lines__left--bottom {
-  background: linear-gradient(270deg, #e5e5e5, #ffffff);
-}
-
-.lines__right--top,
-.lines__right--bottom {
-  background: linear-gradient(90deg, #e5e5e5, #ffffff);
-}
+/* === / OFFER === */
