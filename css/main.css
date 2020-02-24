@@ -26,14 +26,17 @@ li {
 }
 
 .container {
+  margin: 0 auto;
   max-width: 1180px;
   width: 100%;
-  margin: 0 auto;
 }
 
 .container--wider {
-  max-width: 1300px;
+  margin: 0 auto;
   position: relative;
+  width: 1300px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .lines {
@@ -198,7 +201,7 @@ li {
 }
 
 .search__input {
-  padding: 10px 20px 10px 5px;
+  padding: 10px 20px 10px 0;
   width: 120px;
   border: none;
   border-bottom: 2px solid #e5e5e5;
@@ -228,8 +231,8 @@ li {
 
 .first-screen__inner {
   display: flex;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  /*border-top: 1px solid #e5e5e5;*/
+  /*border-bottom: 1px solid #e5e5e5;*/
 }
 
 .first-screen__wrapper {
@@ -238,7 +241,7 @@ li {
 
 .first-screen__text {
   position: absolute;
-  top: 8%;
+  top: 9%;
   right: 16%;
   text-align: center;
 }
@@ -347,8 +350,8 @@ li {
 
 .arrivals__inner {
   padding: 50px 0 100px;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  /*border-top: 1px solid #e5e5e5;*/
+  /*border-bottom: 1px solid #e5e5e5;*/
 }
 
 .arrivals__product-wrapper {
@@ -374,6 +377,10 @@ li {
 .info__inner {
   display: flex;
   justify-content: space-between;
+}
+
+.info__links-wrapper,
+.info__contact-info {
   padding: 34px 0 112px;
 }
 
@@ -382,6 +389,10 @@ li {
   max-width: 590px;
   width: 100%;
   letter-spacing: 0.03em;
+}
+
+.info__contact-info {
+  border-left: 1px solid #e5e5e5;
 }
 
 .info__links {
@@ -485,6 +496,8 @@ li {
 .footer__share {
   display: flex;
   align-items: center;
+  position: relative;
+  right: -20px;
 }
 
 .footer__share-text {
@@ -520,3 +533,10 @@ li {
   margin-right: 35px;
 }
 /* === / FOOTER === */
+
+@media screen and (max-width: 1300px) {
+  .container {
+    max-width: 1220px;
+    padding: 0 20px;
+  }
+}
