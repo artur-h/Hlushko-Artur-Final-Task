@@ -27,8 +27,9 @@ li {
 
 .container {
   margin: 0 auto;
-  max-width: 1180px;
   width: 100%;
+  max-width: 1300px;
+  padding: 0 60px;
 }
 
 .container--wider {
@@ -117,7 +118,7 @@ li {
 .product__thumbnail {
   display: flex;
   position: relative;
-  margin-bottom: 43px;
+  margin-bottom: 47px;
 }
 
 .product__overlay {
@@ -279,8 +280,6 @@ li {
 
 .first-screen__inner {
   display: flex;
-  /*border-top: 1px solid #e5e5e5;*/
-  /*border-bottom: 1px solid #e5e5e5;*/
 }
 
 .first-screen__wrapper {
@@ -398,8 +397,6 @@ li {
 
 .arrivals__inner {
   padding: 50px 0 100px;
-  /*border-top: 1px solid #e5e5e5;*/
-  /*border-bottom: 1px solid #e5e5e5;*/
 }
 
 .arrivals__product-wrapper {
@@ -407,6 +404,14 @@ li {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 70px;
+}
+
+.arrivals__product-wrapper > .product {
+  padding: 0 10px 0 0;
+}
+
+.arrivals__product-wrapper > .product:last-child {
+  padding: 0;
 }
 
 .arrivals__title {
@@ -540,7 +545,6 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 28px 0;
-  border-top: 1px solid #e5e5e5;
   letter-spacing: 0.03em;
 }
 
@@ -590,9 +594,8 @@ li {
 }
 /* === / FOOTER === */
 
-@media screen and (max-width: 1300px) {
-  .container {
-    max-width: 1220px;
-    padding: 0 20px;
+@media screen and (max-width: 1220px) {
+  .menu__item:not(:last-child) {
+    margin-right: 40px;
   }
 }
