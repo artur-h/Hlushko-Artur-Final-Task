@@ -462,3 +462,61 @@ li {
   margin-right: 24px;
 }
 /* === / INFO === */
+
+/* === FOOTER === */
+.footer {
+  display: flex;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-top: 1px solid #e5e5e5;
+  letter-spacing: 0.03em;
+}
+
+.footer__copy {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+.footer__share {
+  display: flex;
+  align-items: center;
+}
+
+.footer__share-text {
+  display: inline-block;
+  margin-right: 3px;
+  font-size: 18px;
+}
+
+.footer__share-block {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  background: url("../img/share-block.png");
+  width: 46px;
+  height: 21px;
+}
+
+.footer__share-number {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer__policy-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+.footer__policy-link:not(:last-child) {
+  margin-right: 35px;
+}
+/* === / FOOTER === */
