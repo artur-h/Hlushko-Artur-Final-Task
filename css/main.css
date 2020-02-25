@@ -77,6 +77,8 @@ li {
   position: relative;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  width: 100%;
+  max-width: 250px;
 }
 
 .arrow-top,
@@ -111,8 +113,10 @@ li {
 }
 
 .product__img {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  max-height: 340px;
+  max-width: 240px;
 }
 
 .product__thumbnail {
@@ -184,6 +188,10 @@ li {
 /* === / COMMON === */
 
 /* === HEADER === */
+.header {
+  padding-bottom: 24px;
+}
+
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -205,7 +213,7 @@ li {
   margin-right: 56px;
   font-size: 12px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.03em;
 }
 
@@ -217,13 +225,12 @@ li {
   font-size: 12px;
   line-height: 18px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 13px;
 }
 
 .menu {
@@ -253,7 +260,11 @@ li {
 }
 
 .search__input {
-  position: relative;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  right: 0;
+  visibility: hidden;
   padding: 10px 20px 10px 0;
   width: 120px;
   border: none;
@@ -263,12 +274,17 @@ li {
   outline: none;
 }
 
-.search__input-icon {
+.search__input-icon,
+.search__input-icon--toggler {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.search__input-icon--toggler {
+  display: none;
 }
 /* === / HEADER === */
 
@@ -412,6 +428,7 @@ li {
 
 .arrivals__product-wrapper > .product:last-child {
   padding: 0;
+  max-width: 240px;
 }
 
 .arrivals__title {
@@ -598,4 +615,41 @@ li {
   .menu__item:not(:last-child) {
     margin-right: 40px;
   }
+}
+
+@media screen and (min-width: 1025px) {
+  .search__input {
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 1260px;
+    padding: 0 40px;
+  }
+
+  .menu__item {
+    font-size: 12px;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-right: 23px;
+  }
+
+  .search__input {
+    width: 250px;
+  }
+
+  .search__input-icon {
+    display: none;
+  }
+
+  .search__input-icon--toggler {
+    display: inline-block;
+  }
+}
+
+.show {
+  visibility: visible;
 }
