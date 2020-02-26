@@ -39,8 +39,9 @@ function closeMobileMenu() {
   let menu = document.getElementById('menu');
   let close = document.getElementById('close-icon');
   let burger = document.getElementById('burger-icon');
+  let input = document.getElementById('search-input');
 
-  if (nav.className === 'nav show-nav') {
+  if (nav.className === 'nav show-nav' && input.value !== '') {
     nav.className = 'nav';
     menu.className = 'menu';
 
@@ -48,6 +49,5 @@ function closeMobileMenu() {
     burger.className = 'header__burger';
   }
 
-  let input = document.getElementById('search-input');
   input.value = '';
 }
