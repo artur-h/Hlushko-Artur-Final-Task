@@ -16,7 +16,7 @@
       <div class="header__inner">
         <a href="#" class="header__logo">
           <span class="header__logo-inner">
-            Template
+            <span>Template</span>
           </span>
         </a>
         <div class="header__wrapper">
@@ -31,11 +31,13 @@
           <a href="#" class="header__bag-quantity">
             <div class="header__bag--inner">Bag (0)</div>
           </a>
+          <img src="img/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
+          <img src="img/close-menu.png" alt="Close menu" class="header__close display-none" onclick="closeMenu(this)" id="close-icon">
         </div>
       </div>
 
-      <nav class="nav">
-        <ul class="menu">
+      <nav class="nav" id="nav">
+        <ul class="menu" id="menu">
           <li class="menu__item">
             <a href="#" class="menu__item-link">Women</a>
           </li>
@@ -65,7 +67,7 @@
           <div class="search__inner">
             <label>
               <input class="search__input" type="text" placeholder="Style Name" id="search-input">
-              <img src="img/search-icon.png" alt="Search" class="search__input-icon" id="search-icon">
+              <img src="img/search-icon.png" alt="Search" class="search__input-icon" id="search-icon" onclick="closeMobileMenu()">
               <img src="img/search-icon.png" alt="Search" class="search__input-icon--toggler" id="search-icon--toggler" onclick="toggleInput()">
             </label>
           </div>

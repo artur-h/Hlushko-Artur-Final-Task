@@ -9,3 +9,45 @@ function toggleInput() {
     searchInput.className = 'search__input show';
   }
 }
+
+function toggleMenu(elem) {
+  let nav = document.getElementById('nav');
+  let menu = document.getElementById('menu');
+  nav.className = 'nav show-nav';
+  menu.className = 'menu show-menu';
+
+  elem.className = 'header__burger display-none';
+
+  let close = document.getElementById('close-icon');
+  close.className = 'header__close';
+}
+
+function closeMenu(elem) {
+  let nav = document.getElementById('nav');
+  let menu = document.getElementById('menu');
+  nav.className = 'nav';
+  menu.className = 'menu';
+
+  elem.className = 'header__close display-none';
+
+  let burger = document.getElementById('burger-icon');
+  burger.className = 'header__burger';
+}
+
+function closeMobileMenu() {
+  let nav = document.getElementById('nav');
+  let menu = document.getElementById('menu');
+  let close = document.getElementById('close-icon');
+  let burger = document.getElementById('burger-icon');
+
+  if (nav.className === 'nav show-nav') {
+    nav.className = 'nav';
+    menu.className = 'menu';
+
+    close.className = 'header__close display-none';
+    burger.className = 'header__burger';
+  }
+
+  let input = document.getElementById('search-input');
+  input.value = '';
+}
