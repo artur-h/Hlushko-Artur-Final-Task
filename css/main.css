@@ -380,8 +380,12 @@ li {
 .offer__product-list {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-around;
+  width: 64%;
+}
+
+.offer__product-list > .product {
+  max-width: 240px;
 }
 
 .old-price {
@@ -633,6 +637,14 @@ li {
   .offer__show-not-desktop {
     display: none;
   }
+
+  .offer__product-list {
+    margin-left: -42px;
+  }
+
+  .offer__equality-sign {
+    left: -20px;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -707,6 +719,10 @@ li {
 
   .offer__product-list {
     width: 70%;
+  }
+
+  .offer__product-list > .product {
+    max-width: 204px;
   }
 
   .product {
@@ -850,6 +866,10 @@ li {
 }
 
 @media screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .container {
     max-width: 1220px;
     padding: 0 20px;
@@ -979,9 +999,13 @@ li {
 
   .offer__product-list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+  }
+
+  .offer__product-list > .product {
+    max-width: 204px;
   }
 
   .offer__summary {

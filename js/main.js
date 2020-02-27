@@ -21,13 +21,13 @@ function toggleMenu(elem) {
   let close = document.getElementById('close-icon');
   close.className = 'header__close';
 
-  menu.addEventListener('click', e => {
+  menu.addEventListener('click', function(e) {
     let target = e.target;
 
     if (target.className === 'menu__item-link') {
       closeMenu(close);
     }
-  });
+  })
 }
 
 function closeMenu(elem) {
