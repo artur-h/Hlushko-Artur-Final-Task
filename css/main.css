@@ -843,6 +843,10 @@ li {
   .offer__equality-show-mobile {
     display: none;
   }
+
+  .footer__mobile-part {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1077,6 +1081,131 @@ li {
 
   .arrivals__action .button{
     font-size: 18px;
+  }
+
+  .info__title {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+
+  .info__item-link {
+    font-size: 12px;
+  }
+
+  .info__item:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  .info__inner {
+    flex-direction: column;
+  }
+
+  .info__links {
+    margin: 0;
+  }
+
+  .info__links-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 60px;
+    border-bottom: 1px solid #e5e5e5;
+    min-width: 100%;
+  }
+
+  .info__links-wrapper,
+  .info__upper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .info__customer-care {
+    width: 147px;
+  }
+
+  .info__upper {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .info__contact-info {
+    min-width: 100%;
+    padding: 0;
+  }
+
+  .info__questions,
+  .info__phone {
+    width: 50%;
+    padding-top: 4px;
+    padding-bottom: 25px;
+  }
+
+  .info__phone {
+    padding-left: 22px;
+    border-left: 1px solid #e5e5e5;
+  }
+
+  .info__title--margin,
+  .info__title--margin-phone {
+    margin-bottom: 10px;
+  }
+
+  .info__title--margin {
+    margin-bottom: 13px;
+  }
+
+  .info__tweet-us {
+    font-size: 12px;
+  }
+
+  .info__phone-number {
+    font-size: 12px;
+  }
+
+  .info__lower {
+    display: none;
+  }
+
+  .info .container {
+    padding: 0;
+  }
+
+  .footer .footer__policy {
+    display: none;
+  }
+
+  .footer__mobile-part {
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 20px;
+  }
+
+  .footer__policy-link,
+  .footer__copy,
+  .footer__share-number {
+    font-size: 10px;
+  }
+
+  .footer__policy-link:not(:last-child) {
+    margin-right: 14px;
+  }
+
+  .footer__share-text {
+    font-size: 14px;
+  }
+
+  .footer__share-block {
+    width: 40px;
+    height: 19px;
+  }
+
+  .footer__share-number {
+    top: 40%;
+  }
+
+  .footer__inner {
+    padding: 22px 0;
   }
 }
 
