@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Roboto:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">
+            <span class="header__logo-inner">
+              <span>Template</span>
+            </span>
+        </a>
+        <div class="header__wrapper">
+          <a href="#" class="header__sign-up">
+              <span class="header__sign-up-inner">
+                E-mail sign up
+              </span>
+          </a>
+          <a href="#" class="header__bag-icon">
+            <img class="header__bag-icon-img" src="img/bag-icon.png" alt="Shopping bag">
+          </a>
+          <a href="#" class="header__bag-quantity">
+            <div class="header__bag--inner">Bag (0)</div>
+          </a>
+          <img src="img/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
+          <img src="img/close-menu.png" alt="Close menu" class="header__close display-none" onclick="closeMenu(this)" id="close-icon">
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <ul class="menu" id="menu">
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Women</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Men</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Handbags</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Accessories</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Sale</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">New Arrivals</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Clearance</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__item-link">Store Locator</a>
+          </li>
+        </ul>
+        <div class="search">
+          <div class="search__inner">
+            <label>
+              <input class="search__input" type="text" placeholder="Style Name" id="search-input">
+              <img src="img/search-icon.png" alt="Search" class="search__input-icon" id="search-icon" onclick="closeMobileMenu()">
+              <img src="img/search-icon.png" alt="Search" class="search__input-icon--toggler" id="search-icon--toggler" onclick="toggleInput()">
+            </label>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="filter">
+    <div class="lines">
+      <div class="lines__left lines__left--top"></div>
+      <div class="lines__left lines__left--bottom"></div>
+    </div>
+
+    <div class="container--wider">
+      <div class="container">
+        <div class="filter__inner">
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Fashion</div>
+              <h5 class="filter__selected">Casual Style</h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Product type</div>
+              <h5 class="filter__selected"></h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Color</div>
+              <h5 class="filter__selected"></h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Brand</div>
+              <h5 class="filter__selected"></h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Size</div>
+              <h5 class="filter__selected"></h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+          <div class="filter__item">
+            <div class="filter__text">
+              <div class="filter__name">Price range</div>
+              <h5 class="filter__selected"></h5>
+            </div>
+            <img src="img/filter-arrow.png" alt="Expand arrow" class="filter__arrow">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lines">
+      <div class="lines__right lines__right--top"></div>
+      <div class="lines__right lines__right--bottom"></div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -564,6 +564,31 @@ li {
 }
 /* === / INFO === */
 
+/* === FILTER === */
+.filter {
+  display: flex;
+}
+
+.filter__inner {
+  display: flex;
+}
+
+.filter__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 16.666%;
+}
+
+.filter__text {}
+
+.filter__name {}
+
+.filter__selected {}
+
+.filter__arrow {}
+/* === / FILTER === */
+
 /* === FOOTER === */
 .footer {
   display: flex;
