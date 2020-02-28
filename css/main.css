@@ -195,7 +195,7 @@ li {
 .header__inner {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0 12px;
+  padding: 25px 0 22px;
 }
 
 .header__logo {
@@ -247,10 +247,6 @@ li {
   margin-right: 66px;
 }
 
-.menu__item-link {
-  transition: .3s all ease;
-}
-
 .menu__item-link:hover {
   color: #f14a58;
 }
@@ -272,6 +268,13 @@ li {
   font-size: 12px;
   color: #a8a8a8;
   outline: none;
+}
+
+.search__input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  color: #a8a8a8;
+  letter-spacing: 0.03em;
 }
 
 .search__input-icon,
@@ -573,20 +576,76 @@ li {
   display: flex;
 }
 
-.filter__item {
+.filter__result {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  padding: 14px 20px;
+  height: 64px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.filter__menu {
+  position: absolute;
+  top: 64px;
+  display: none;
+  padding: 6px 0;
+  border: 1px solid #fff;
+  width: calc(16.666% - 21px);
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.filter__menu-item {
+  padding: 8px 18px;
+  font-size: 12px;
+}
+
+.filter__menu-item:hover {
+  background-color: #f7f7f7;
+  color: #f14a58;
+}
+
+.filter__item {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
   width: 16.666%;
 }
 
-.filter__text {}
+.filter__item--selected {
+  border-left: 1px solid #f7f7f7;
+  border-right: 1px solid #f7f7f7;
+}
 
-.filter__name {}
+.filter__item:hover {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  box-shadow: 0 2px 5px -2px #888
+}
 
-.filter__selected {}
+.filter__item:hover .filter__menu {
+  display: block;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 5px -2px #888
+}
 
-.filter__arrow {}
+.filter__result--selected {
+  background-color: #f7f7f7;
+}
+
+.filter__name--selected {
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.filter__choice {
+  font-size: 16px;
+  margin: 0;
+  color: #f14a58;
+}
 /* === / FILTER === */
 
 /* === FOOTER === */
