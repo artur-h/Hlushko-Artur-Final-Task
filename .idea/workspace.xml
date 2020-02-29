@@ -5,6 +5,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bag-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/bag-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/burger.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/burger.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/caps-hats.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/promo/caps-hats.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/close-menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/close-menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/equality-sign.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/equality-sign.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fb-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/fb-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/filter-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/filter-arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/nike-red.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/promo/nike-red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/plus-sign.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/plus-sign.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/search-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/search-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/share-block.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/share-block.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tweeter-grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/tweeter-grey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/tweeter.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/icons/tweeter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/start.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\img\icons" />
+      <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\img\promo" />
       <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\data" />
     </key>
   </component>
@@ -50,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582400800079</updated>
-      <workItem from="1582400802967" duration="139228000" />
+      <workItem from="1582400802967" duration="143140000" />
     </task>
     <servers />
   </component>

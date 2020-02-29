@@ -534,6 +534,7 @@ li {
 .info__inner {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .info__links-wrapper,
@@ -544,12 +545,15 @@ li {
 .info__links-wrapper {
   display: flex;
   max-width: 590px;
-  width: 100%;
+  width: 50%;
   letter-spacing: 0.03em;
 }
 
 .info__contact-info {
   border-left: 1px solid #e5e5e5;
+  padding-left: 58px;
+  max-width: 590px;
+  width: 50%;
 }
 
 .info__links {
@@ -592,12 +596,6 @@ li {
 
 .info__item-link:hover {
   border-bottom: 1px solid #000;
-}
-
-.info__contact-info {
-  padding-left: 58px;
-  max-width: 590px;
-  width: 100%;
 }
 
 .info__upper {
@@ -722,6 +720,78 @@ li {
 }
 /* === / FILTER === */
 
+/* === PROMO === */
+.promo {
+  display: flex;
+}
+
+.promo__inner {
+  display: flex;
+}
+
+.promo__wrapper {
+  position: relative;
+}
+
+.promo__wrapper:nth-child(2) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.promo__img {
+  width: 100%;
+  height: 100%;
+}
+
+.promo__text {
+  position: absolute;
+  text-align: center;
+  width: 230px;
+}
+
+.promo__text--corner-position {
+  top: 33px;
+  right: 48px;
+}
+
+.promo__text--center-position {
+  left: 50%;
+  bottom: 53px;
+  transform: translateX(-50%);
+}
+
+.promo__product-name {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.promo__product-name--sale {
+  color: #f14a58;
+}
+
+.promo__gender {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  color: #fff;
+}
+
+.promo__price {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.promo__currency {}
+
+.promo__discount {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  color: #757575;
+}
+/* === / PROMO === */
+
 /* === FOOTER === */
 .footer {
   display: flex;
@@ -758,7 +828,7 @@ li {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  background: url("../img/share-block.png");
+  background: url("../img/icons/share-block.png");
   width: 46px;
   height: 21px;
 }
