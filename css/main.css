@@ -122,7 +122,7 @@ li {
 .product__thumbnail {
   display: flex;
   position: relative;
-  margin-bottom: 47px;
+  margin-bottom: 42px;
 }
 
 .product__overlay {
@@ -157,16 +157,42 @@ li {
 }
 
 .product__description {
+  padding: 0 32px;
   font-size: 14px;
 }
 
 .product__name {
+  margin-bottom: 12px;
   letter-spacing: 0.03em;
+  line-height: 1.8;
   transition: .3s all ease;
+}
+
+.product__price-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .product__price {
   font-weight: 400;
+}
+
+.product__price--old {
+  position: relative;
+  margin-right: 7px;
+  color: #757575;
+}
+
+.product__price--old::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: -6px;
+  display: block;
+  height: 1px;
+  width: 60px;
+  background-color: #f25a66;
+  transform: rotate(-30deg);
 }
 
 .button {
@@ -432,7 +458,6 @@ li {
 .arrivals__product-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 70px;
 }
 
@@ -441,6 +466,28 @@ li {
 }
 
 .arrivals__product-wrapper > .product:last-child {
+  padding: 0;
+  max-width: 240px;
+}
+
+.arrivals__product-inner-wrapper {
+  margin-bottom: 80px;
+}
+
+.arrivals__product-inner-wrapper:last-child {
+  margin-bottom: 70px;
+}
+
+.arrivals__product-inner-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrivals__product-inner-wrapper > .product {
+  padding: 0 10px 0 0;
+}
+
+.arrivals__product-inner-wrapper > .product:last-child {
   padding: 0;
   max-width: 240px;
 }
@@ -455,6 +502,31 @@ li {
 .arrivals__action {
   margin: 0 auto;
   max-width: 300px;
+}
+
+.arrivals__heading {
+  margin: 82px 0 100px;
+  text-align: center;
+}
+
+.arrivals__offer-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 0.03em;
+}
+
+.arrivals__subtitle {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.arrivals__offer {
+  color: #f14a58;
+}
+
+.arrivals__show-more {
+  text-align: center;
 }
 /* === / ARRIVALS === */
 
@@ -570,6 +642,7 @@ li {
 /* === FILTER === */
 .filter {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .filter__inner {
@@ -581,7 +654,7 @@ li {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 14px 20px;
+  padding: 14px 18px;
   height: 64px;
   letter-spacing: 0.03em;
   cursor: pointer;
@@ -596,6 +669,7 @@ li {
   width: calc(16.666% - 21px);
   background-color: #fff;
   cursor: pointer;
+  z-index: 15;
 }
 
 .filter__menu-item {
