@@ -864,8 +864,6 @@ li {
   font-weight: 400;
 }
 
-.promo__currency {}
-
 .promo__discount {
   font-family: 'Times New Roman', serif;
   font-style: italic;
@@ -951,9 +949,12 @@ li {
     left: -20px;
   }
 
+  .filter {
+    display: flex;
+  }
+
   .offer__show-not-desktop,
   .show-tablet-filter,
-  .filter,
   .arrivals__product-inner-wrapper > .product:nth-child(1),
   .arrivals__product-inner-wrapper > .product:nth-child(2),
   .arrivals__product-inner-wrapper-2nd-row > .product:nth-child(1),
@@ -1070,7 +1071,7 @@ li {
   }
 
   .product__thumbnail {
-    margin-bottom: 42px;
+    margin-bottom: 35px;
   }
 
   .arrow-top {
@@ -1175,6 +1176,7 @@ li {
 
   .arrivals__catalog-wrapper {
     margin-top: -25px;
+    margin-bottom: 77px;
   }
 
   .arrivals__offer-title {
@@ -1185,7 +1187,8 @@ li {
   }
 
   .arrivals__heading {
-    margin-top: -25px;
+    margin-top: 0;
+    margin-bottom: 90px;
   }
 
   .arrivals__subtitle {
@@ -1234,6 +1237,46 @@ li {
   .arrivals__product-inner-wrapper-3rd-row > .product:last-child {
     padding: 0;
     max-width: 204px;
+  }
+
+  .arrivals__product-inner-wrapper {
+    margin-bottom: 79px;
+  }
+
+  .arrivals__product-inner-wrapper-2nd-row {
+    margin-bottom: 106px;
+  }
+
+  .arrivals__product-inner-wrapper-3rd-row {
+    margin-bottom: 75px;
+  }
+
+  .arrivals__show-more {
+    margin: 0 auto;
+    max-width: 260px;
+  }
+
+  .product__description {
+    padding: 0 14px;
+  }
+
+  .promo__product-name {
+    font-size: 22px;
+  }
+
+  .promo__text--corner-position {
+    top: 2%;
+    right: 2%;
+  }
+
+  .promo__text--center-position {
+    bottom: 87px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .promo__wrapper:last-child {
+    display: none;
   }
 }
 
