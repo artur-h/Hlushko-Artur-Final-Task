@@ -61,46 +61,48 @@ function closeMobileMenu() {
 }
 
 
-// let tabMenu = document.getElementById('tab-menu');
-// tabMenu.addEventListener('click', function(e) {
-//   let target = e.target;
-//
-//   if (target.className === 'filter__menu-item') {
-//     let data = target.dataset.type;
-//     let el = document.querySelectorAll('*');
-//     let elems = [];
-//
-//     for (let i = 0; i < el.length; i++) {
-//       if (el[i].dataset.type === data && el[i].className !== 'filter__menu-item') {
-//         elems.push(el[i]);
-//       }
-//     }
-//
-//     let item;
-//     let result;
-//     let name;
-//     let choice;
-//
-//     for (let i = 0; i < elems.length; i++) {
-//       if (elems[i].className === 'filter__result' || elems[i].className === 'filter__result filter__result--selected') result = elems[i];
-//       if (elems[i].className === 'filter__name' || elems[i].className === 'filter__name filter__name--selected') name = elems[i];
-//       if (elems[i].className === 'filter__choice' || elems[i].className === 'filter__choice filter__choice--selected') choice = elems[i];
-//       if (elems[i].className === 'filter__item' || elems[i].className === 'filter__item filter__item--selected') item = elems[i];
-//     }
-//
-//     if (target.textContent !== 'Not selected') {
-//       item.className = 'filter__item filter__item--selected';
-//       result.className = 'filter__result filter__result--selected';
-//       name.className = 'filter__name filter__name--selected';
-//       choice.textContent = target.textContent;
-//     } else if (target.textContent === 'Not selected') {
-//       item.className = 'filter__item';
-//       result.className = 'filter__result';
-//       name.className = 'filter__name';
-//       choice.textContent = '';
-//     }
-//   }
-// });
+let tabMenu = document.getElementById('tab-menu');
+tabMenu.addEventListener('click', function(e) {
+  let target = e.target;
+
+  if (target.className === 'filter__menu-item') {
+    let data = target.dataset.type;
+    let el = document.querySelectorAll('*');
+    let elems = [];
+
+    for (let i = 0; i < el.length; i++) {
+      if (el[i].dataset.type === data && el[i].className !== 'filter__menu-item') {
+        elems.push(el[i]);
+      }
+    }
+
+    let item;
+    let result;
+    let name;
+    let choice;
+
+    for (let i = 0; i < elems.length; i++) {
+      if (elems[i].className === 'filter__result' || elems[i].className === 'filter__result filter__result--selected') result = elems[i];
+      if (elems[i].className === 'filter__name' || elems[i].className === 'filter__name filter__name--selected') name = elems[i];
+      if (elems[i].className === 'filter__choice' || elems[i].className === 'filter__choice filter__choice--selected') choice = elems[i];
+      if (elems[i].className === 'filter__item' || elems[i].className === 'filter__item filter__item--selected') item = elems[i];
+    }
+
+    if (target.textContent !== 'Not selected') {
+      item.className = 'filter__item filter__item--selected';
+      result.className = 'filter__result filter__result--selected';
+      name.className = 'filter__name filter__name--selected';
+      choice.textContent = target.textContent;
+    } else if (target.textContent === 'Not selected') {
+      item.className = 'filter__item';
+      result.className = 'filter__result';
+      name.className = 'filter__name';
+      choice.textContent = '';
+    }
+  }
+});
+
+
 let selectedTabletFilterElements = {
   'fashion': [],
   'productType': [],
@@ -181,5 +183,4 @@ tabletTabMenu.addEventListener('click', function(e) {
       result.textContent = sectionName.textContent;
     }
   }
-  console.log(selectedTabletFilterElements);
 });

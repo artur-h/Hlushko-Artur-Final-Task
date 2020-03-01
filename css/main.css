@@ -953,6 +953,14 @@ li {
   .offer__equality-sign {
     left: -20px;
   }
+
+  .show-tablet-filter {
+    display: none;
+  }
+
+  .filter {
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -989,6 +997,14 @@ li {
 
   .header__logo-inner {
     font-size: 26px;
+  }
+
+  .filter {
+    display: none;
+  }
+
+  .show-tablet-filter {
+    display: block;
   }
 
   .first-screen__text {
