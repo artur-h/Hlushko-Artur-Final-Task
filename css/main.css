@@ -744,8 +744,6 @@ li {
   color: #f14a58;
 }
 
-.tablet-filter__arrow-icon {}
-
 .tablet-filter__menu {
   display: flex;
   flex-wrap: wrap;
@@ -784,6 +782,7 @@ li {
   font-size: 14px;
   color: #757575;
   list-style: disc;
+  cursor: pointer;
 }
 
 .tablet-filter__list-item--not-selected {
