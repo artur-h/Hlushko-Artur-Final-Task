@@ -728,22 +728,28 @@ li {
 .tablet-filter__inner {
   display: flex;
   align-items: center;
-  padding: 15px 0;
+  padding: 23px 10px;
   cursor: pointer;
 }
 
 .tablet-filter__wrapper {
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
-.tablet-filter__picked {}
+.tablet-filter__options {
+  font-size: 14px;
+}
+
+.tablet-filter__options--selected {
+  color: #f14a58;
+}
 
 .tablet-filter__arrow-icon {}
 
 .tablet-filter__menu {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .tablet-filter__menu {
@@ -754,23 +760,28 @@ li {
 }
 
 .tablet-filter__menu-item {
-  margin-bottom: 30px;
-  width: 33.333%;
+  margin-bottom: 50px;
+  width: 30.5%;
 }
 
 .tablet-filter__heading {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
 }
 
 .tablet-filter__list {
   padding-left: 20px;
+  letter-spacing: 0.03em;
 }
 
 .tablet-filter__list-item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .tablet-filter__list-item {
+  padding-left: 10px;
+  font-size: 14px;
   color: #757575;
   list-style: disc;
 }
@@ -785,7 +796,7 @@ li {
 
 .tablet-filter__close-icon {
   position: absolute;
-  right: 40px;
+  right: 52px;
 }
 /* === / TABLET-FILTER === */
 
