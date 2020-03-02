@@ -831,7 +831,7 @@ li {
 
 .promo__text--corner-position {
   top: 33px;
-  right: 48px;
+  right: 100px;
 }
 
 .promo__text--center-position {
@@ -880,6 +880,129 @@ li {
   color: #757575;
 }
 /* === / PROMO === */
+
+/* === ITEM === */
+.back {
+  display: flex;
+}
+
+.back__link {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 23px 0;
+  letter-spacing: 0.03em;
+}
+
+.item {
+  padding: 60px 0 101px;
+}
+
+.item__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__preview {}
+
+.item__preview-wrapper {}
+
+.item__preview-full {}
+
+.item__preview-full-img {}
+
+.item__thumb-wrapper {
+  display: flex;
+}
+
+.item__thumb-img {}
+
+.item__preview-full-img,
+.item__thumb-img {
+  display: block;
+  cursor: pointer;
+}
+
+.item__info {
+  max-width: 540px;
+}
+
+.item__name {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item__description {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.9;
+  font-family: 'Times New Roman', serif;
+}
+
+.item__price {
+  margin-bottom: 42px;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item__currency {}
+
+.item__size-wrapper,
+.item__color-wrapper {
+  display: flex;
+}
+
+.item__color-wrapper {
+  margin-bottom: 75px;
+}
+
+.item__size-description,
+.item__color-description {
+  width: 77px;
+  line-height: 42px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item__size-inner,
+.item__color-inner {
+  display: flex;
+}
+
+.item__size-inner {
+  margin-bottom: 20px;
+}
+
+.item__size,
+.item__color {
+  display: inline-block;
+  padding: 12px 0;
+  width: 80px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.item__color--selected,
+.item__size--selected {
+  border: 1px solid #e5e5e5;
+}
+
+.item__size:not(:last-child),
+.item__color:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item__button-wrapper {
+  text-align: center;
+}
+/* === / ITEM === */
 
 /* === FOOTER === */
 .footer {
@@ -998,6 +1121,10 @@ li {
   .tablet-filter__arrow-icon {
     position: relative;
     top: -3px;
+  }
+
+  .search__input {
+    box-shadow: -20px 0 10px #fff;
   }
 }
 
