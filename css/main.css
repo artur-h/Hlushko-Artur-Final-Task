@@ -1664,6 +1664,55 @@ li {
   .footer__inner {
     padding: 22px 0;
   }
+
+  .tablet-filter__inner {
+    padding: 18px;
+  }
+
+  .tablet-filter__wrapper {
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .tablet-filter__fix-wrapper {
+    height: 18px;
+  }
+
+  .tablet-filter__options {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .tablet-filter__arrow-icon {
+    position: relative;
+    left: 15px;
+    top: 5px;
+  }
+
+  .tablet-filter__mobile-bg {
+    position: absolute;
+    right: -350px;
+    width: 400px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: -15px 0 15px #fff;
+  }
+
+  .tablet-filter__close-icon {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+  }
+
+  .tablet-filter__menu {
+    justify-content: space-between;
+    padding-top: 38px;
+  }
+
+  .tablet-filter__menu-item {
+    margin-bottom: 38px;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 600px) {

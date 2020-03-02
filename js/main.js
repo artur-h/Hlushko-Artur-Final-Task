@@ -122,7 +122,8 @@ tabletTabMenu.addEventListener('click', function(e) {
   if (target.className === 'tablet-filter__inner' ||
       target.className === 'tablet-filter__options' ||
       target.className === 'tablet-filter__arrow-icon' ||
-      target.className === 'tablet-filter__wrapper') {
+      target.className === 'tablet-filter__wrapper' ||
+      target.className === 'tablet-filter__mobile-bg') {
 
     if (menu.className === 'tablet-filter__menu display-none') {
       closeIcon.className = 'tablet-filter__close-icon';
