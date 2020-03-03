@@ -1013,6 +1013,19 @@ li {
 .item__button-wrapper {
   text-align: center;
 }
+
+.item__thumb-inner-wrapper {
+  position: relative;
+}
+
+.item__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /* === / ITEM === */
 
 /* === BAG === */
@@ -2548,4 +2561,8 @@ li {
 
 .display-inline-block {
   display: inline-block;
+}
+
+.bag__item-name--hover {
+  color: #f14a58;
 }
