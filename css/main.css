@@ -1691,6 +1691,72 @@ li {
     margin: 0 auto;
     width: 260px;
   }
+
+  .shop__link {
+    margin-left: 7px;
+    padding: 20px 0;
+    font-size: 20px;
+  }
+
+  .bag__inner {
+    padding-bottom: 15px;
+  }
+
+  .bag__item {
+    margin-bottom: 95px;
+  }
+
+  .bag__item > .product {
+    max-width: 145px;
+  }
+
+  .bag__info {
+    padding-top: 7px;
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .bag__item-name {
+    margin-bottom: 5px;
+    max-width: 120px;
+    width: 100%;
+  }
+
+  .bag__price {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .bag__description {
+    margin-bottom: 10px;
+  }
+
+  .bag-promo__text {
+    font-size: 11px;
+  }
+
+  .bag__empty-btn {
+    padding: 0;
+  }
+
+  .bag__total {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .bag__discount {
+    bottom: 31px;
+    letter-spacing: 0.035em;
+  }
+
+  .bag__checkout-btn-wrapper {
+    right: -80px;
+    width: 261px;
+  }
+
+  .bag__checkout-wrapper {
+    padding-bottom: 100px;
+  }
 }
 
 @media screen and (max-width: 975px) {
