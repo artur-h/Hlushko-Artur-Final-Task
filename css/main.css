@@ -1015,6 +1015,174 @@ li {
 }
 /* === / ITEM === */
 
+/* === BAG === */
+.shop {
+  display: flex;
+}
+
+.shop__link {
+  display: inline-block;
+  margin-left: 18px;
+  padding: 18px 0;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+}
+
+.bag {
+  padding: 30px 0 0;
+}
+
+.bag__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+}
+
+.bag__item {
+  display: flex;
+  margin-bottom: 90px;
+  width: 50%;
+}
+
+.bag__info {
+  max-width: 220px;
+  padding-top: 5px;
+  padding-left: 24px;
+}
+
+.bag__item-name {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+}
+
+.bag__price {
+  margin-bottom: 35px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.bag__description {
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.bag__heading-color,
+.bag__heading-size {
+  margin-bottom: 10px;
+}
+
+.bag__quantity-wrapper {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.bag__decrease-btn,
+.bag__increase-btn {
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.bag__decrease-btn,
+.bag__increase-btn,
+.bag__remove-item-btn {
+  border: none;
+  background: none;
+}
+
+.bag__decrease-sign {
+  padding-bottom: 3px;
+}
+
+.bag__increase-sign {
+  padding-bottom: 1px;
+}
+
+.bag__remove-item-btn {
+  padding: 0;
+  font-size: 13px;
+  color: #f14a58;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.bag__item > .product .product__thumbnail {
+  margin-bottom: 0;
+}
+
+.bag__item > .product {
+  max-width: 240px;
+}
+
+.bag-promo {
+  display: flex;
+}
+
+.bag-promo__text {
+  margin: 0;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  background-color: #f7f7f7;
+}
+
+.bag-promo__code {
+  color: #f14a58;
+}
+
+.bag__checkout-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 0 80px;
+}
+
+.bag__empty-btn {
+  background: none;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bag__checkout-btn-wrapper {
+  position: relative;
+  right: -60px;
+}
+
+.button--checkout {
+  background: none;
+  cursor: pointer;
+}
+
+.bag__total-price-wrapper {
+  position: relative;
+  width: 225px;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.bag__discount {
+  position: absolute;
+  bottom: 33px;
+  right: 0;
+  font-weight: 400;
+  color: #f14a58;
+}
+
+.bag__total {
+  font-size: 22px;
+}
+/* === / BAG === */
+
 /* === FOOTER === */
 .footer {
   display: flex;
