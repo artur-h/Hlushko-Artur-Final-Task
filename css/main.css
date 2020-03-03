@@ -1132,6 +1132,10 @@ li {
   background-color: #f7f7f7;
 }
 
+.bag-promo__text-inner {
+  margin: 0 auto;
+}
+
 .bag-promo__code {
   color: #f14a58;
 }
@@ -2374,6 +2378,100 @@ li {
   .button {
     letter-spacing: 0;
   }
+
+  .shop__link {
+    padding: 16px 0;
+    font-size: 18px;
+  }
+
+  .bag {
+    padding-top: 16px;
+  }
+
+  .bag__inner {
+    flex-direction: column;
+    padding-bottom: 6px;
+  }
+
+  .bag__item {
+    justify-content: center;
+    margin-bottom: 42px;
+    width: 100%;
+  }
+
+  .bag__item-name {
+    font-size: 12px;
+    width: 83%;
+  }
+
+  .bag__item > .product {
+    max-width: 158px;
+  }
+
+  .bag__info {
+    padding-top: 10px;
+    padding-left: 22px;
+  }
+
+  .bag__price {
+    margin-bottom: 30px;
+  }
+
+  .bag__description {
+    margin-bottom: 25px;
+    font-size: 10px;
+  }
+
+  .bag__remove-item-btn {
+    font-size: 11px;
+  }
+
+  .bag-promo__text {
+    font-size: 10px;
+  }
+
+  .bag-promo__text-inner {
+    margin: 0 auto;
+    width: 330px;
+    line-height: 1.5;
+  }
+
+  .bag__checkout-wrapper {
+    flex-direction: column;
+    padding-top: 42px;
+    padding-bottom: 98px;
+  }
+
+  .bag__empty-btn {
+    order: 3;
+    font-size: 10px;
+  }
+
+  .bag__checkout-btn-wrapper {
+    order: 2;
+    right: 0;
+    margin-bottom: 19px;
+  }
+
+  .bag__total-price-wrapper {
+    order: 1;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .bag__discount {
+    left: 0;
+    font-size: 12px;
+  }
+
+  .bag__total {
+    font-size: 16px;
+  }
+
+  .bag__total-currency,
+  .bag__total-price {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -2389,6 +2487,10 @@ li {
     position: absolute;
     top: 200px;
     left: 125px;
+  }
+
+  .bag__item {
+    justify-content: flex-start;
   }
 }
 
