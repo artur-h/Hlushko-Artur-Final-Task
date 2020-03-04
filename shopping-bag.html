@@ -29,7 +29,11 @@
             <img class="header__bag-icon-img" src="img/icons/bag-icon.png" alt="Shopping bag">
           </a>
           <a href="#" class="header__bag-quantity">
-            <div class="header__bag--inner">Bag (0)</div>
+            <div class="header__bag--inner">
+              Bag<span class="header__bag-price" id="total-price-header-wrapper">
+              <span class="header__bag-currency">&#163;</span><span id="total-price-header">236.50</span></span>
+              <span class="header__bag-amount" id="total-bag-quantity">(4)</span>
+            </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
           <img src="img/icons/close-menu.png" alt="Close menu" class="header__close display-none" onclick="closeMenu(this)" id="close-icon">
@@ -96,10 +100,10 @@
     </div>
   </div>
 
-  <section class="bag">
+  <section class="bag" id="displayed-bag">
     <div class="container">
       <div class="bag__inner" id="bag-inner">
-        <div class="bag__item">
+        <div class="bag__item" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">
           <div class="product product--new">
             <a href="#">
               <div class="product__thumbnail">
@@ -116,16 +120,16 @@
               <div class="bag__heading-size">Size: <span class="bag__size">UK 17</span></div>
               <div class="bag__heading-quantity">Quantity:
                 <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign"></button>
-                  <span class="bag__quantity">1</span>
-                  <button class="bag__increase-btn"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign"></button>
+                  <button class="bag__decrease-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"></button>
+                  <span class="bag__quantity" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">1</span>
+                  <button class="bag__increase-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"></button>
                 </div>
               </div>
             </div>
-            <button class="bag__remove-item-btn">Remove item</button>
+            <button class="bag__remove-item-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">Remove item</button>
           </div>
         </div>
-        <div class="bag__item">
+        <div class="bag__item" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">
           <div class="product">
             <a href="#">
               <div class="product__thumbnail">
@@ -142,16 +146,16 @@
               <div class="bag__heading-size">Size: <span class="bag__size">UK 18</span></div>
               <div class="bag__heading-quantity">Quantity:
                 <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign"></button>
-                  <span class="bag__quantity">1</span>
-                  <button class="bag__increase-btn"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign"></button>
+                  <button class="bag__decrease-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"></button>
+                  <span class="bag__quantity" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">1</span>
+                  <button class="bag__increase-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"></button>
                 </div>
               </div>
             </div>
-            <button class="bag__remove-item-btn">Remove item</button>
+            <button class="bag__remove-item-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">Remove item</button>
           </div>
         </div>
-        <div class="bag__item">
+        <div class="bag__item" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">
           <div class="product">
             <a href="#">
               <div class="product__thumbnail">
@@ -168,16 +172,16 @@
               <div class="bag__heading-size">Size: <span class="bag__size">UK 18</span></div>
               <div class="bag__heading-quantity">Quantity:
                 <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign"></button>
-                  <span class="bag__quantity">1</span>
-                  <button class="bag__increase-btn"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign"></button>
+                  <button class="bag__decrease-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"></button>
+                  <span class="bag__quantity" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">1</span>
+                  <button class="bag__increase-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"></button>
                 </div>
               </div>
             </div>
-            <button class="bag__remove-item-btn">Remove item</button>
+            <button class="bag__remove-item-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">Remove item</button>
           </div>
         </div>
-        <div class="bag__item">
+        <div class="bag__item" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">
           <div class="product product--new">
             <a href="#">
               <div class="product__thumbnail">
@@ -194,22 +198,22 @@
               <div class="bag__heading-size">Size: <span class="bag__size">UK 19  </span></div>
               <div class="bag__heading-quantity">Quantity:
                 <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign"></button>
-                  <span class="bag__quantity">1</span>
-                  <button class="bag__increase-btn"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign"></button>
+                  <button class="bag__decrease-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"></button>
+                  <span class="bag__quantity" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">1</span>
+                  <button class="bag__increase-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"></button>
                 </div>
               </div>
             </div>
-            <button class="bag__remove-item-btn">Remove item</button>
+            <button class="bag__remove-item-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">Remove item</button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bag-promo">
+    <div class="bag-promo" id="bag-promo">
       <div class="lines">
         <div class="lines__left lines__left--top"></div>
-        <div class="lines__left lines__left--bottom"></div>
+        <div class="lines__left lines__left--bottom hide"></div>
       </div>
 
       <div class="container--wider">
@@ -229,7 +233,7 @@
                 Applied discount: <span class="bag__discount-currency">&#163;</span><span class="bag__discount-price">15.00</span>
               </div>
               <div class="bag__total">
-                Total price: <span class="bag__total-currency">&#163;</span><span class="bag__total-price">236.50</span>
+                Total price: <span class="bag__total-currency">&#163;</span><span class="bag__total-price" id="total-price-checkout">236.50</span>
               </div>
             </div>
           </div>
@@ -238,88 +242,98 @@
 
       <div class="lines">
         <div class="lines__right lines__right--top"></div>
-        <div class="lines__right lines__right--bottom"></div>
+        <div class="lines__right lines__right--bottom hide"></div>
       </div>
     </div>
   </section>
 
   <section class="info">
-    <div class="container">
-      <div class="info__inner">
-        <div class="info__links-wrapper">
-          <div class="info__links">
-            <h4 class="info__title">Quick Links</h4>
-            <ul class="info__items-wrapper">
-              <li class="info__item">
-                <a href="#" class="info__item-link">Store locator</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Gift cards</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Size guide</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">About us</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Support</a>
-              </li>
-            </ul>
+    <div class="lines">
+      <div class="lines__left lines__left--top"></div>
+      <div class="lines__left lines__left--bottom hide"></div>
+    </div>
+    <div class="container--wider border-bottom-none">
+      <div class="container">
+        <div class="info__inner">
+          <div class="info__links-wrapper">
+            <div class="info__links">
+              <h4 class="info__title">Quick Links</h4>
+              <ul class="info__items-wrapper">
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Store locator</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Gift cards</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Size guide</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">About us</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Support</a>
+                </li>
+              </ul>
+            </div>
+            <div class="info__customer-care">
+              <h4 class="info__title">Customer Care</h4>
+              <ul class="info__items-wrapper">
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Customer service</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Track my order</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Return policy</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Shipping & delivery</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Contact us</a>
+                </li>
+                <li class="info__item">
+                  <a href="#" class="info__item-link">Careers</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="info__customer-care">
-            <h4 class="info__title">Customer Care</h4>
-            <ul class="info__items-wrapper">
-              <li class="info__item">
-                <a href="#" class="info__item-link">Customer service</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Track my order</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Return policy</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Shipping & delivery</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Contact us</a>
-              </li>
-              <li class="info__item">
-                <a href="#" class="info__item-link">Careers</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="info__contact-info">
-          <div class="info__upper">
-            <div class="info__questions">
-              <h4 class="info__title info__title--margin">Questions</h4>
-              <div class="info__tweet">
-                <img src="img/icons/tweeter-grey.png" alt="Tweeter" class="info__tweet-questions">
-                <div class="info__tweet-us">Tweet us <a href="#" class="info__tweet-name">@template</a></div>
+          <div class="info__contact-info">
+            <div class="info__upper">
+              <div class="info__questions">
+                <h4 class="info__title info__title--margin">Questions</h4>
+                <div class="info__tweet">
+                  <img src="img/icons/tweeter-grey.png" alt="Tweeter" class="info__tweet-questions">
+                  <div class="info__tweet-us">Tweet us <a href="#" class="info__tweet-name">@template</a></div>
+                </div>
+              </div>
+              <div class="info__phone">
+                <h4 class="info__title info__title--margin-phone">Order by phone</h4>
+                <a href="tel:+88004094712" class="info__phone-number">8-800-409-47-12</a>
               </div>
             </div>
-            <div class="info__phone">
-              <h4 class="info__title info__title--margin-phone">Order by phone</h4>
-              <a href="tel:+88004094712" class="info__phone-number">8-800-409-47-12</a>
-            </div>
-          </div>
-          <div class="info__lower">
-            <p class="info__advantage">
-              We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
-            </p>
-            <div class="info__socials">
-              <a class="info__facebook" href="#">
-                <img src="img/icons/fb-icon.png" alt="Facebook" class="info__facebook-icon">
-              </a>
-              <a class="info__tweeter" href="#">
-                <img src="img/icons/tweeter.png" alt="Tweeter" class="info__tweeter-icon">
-              </a>
+            <div class="info__lower">
+              <p class="info__advantage">
+                We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5 days.
+              </p>
+              <div class="info__socials">
+                <a class="info__facebook" href="#">
+                  <img src="img/icons/fb-icon.png" alt="Facebook" class="info__facebook-icon">
+                </a>
+                <a class="info__tweeter" href="#">
+                  <img src="img/icons/tweeter.png" alt="Tweeter" class="info__tweeter-icon">
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="lines">
+      <div class="lines__right lines__right--top"></div>
+      <div class="lines__right lines__right--bottom hide"></div>
     </div>
   </section>
 
@@ -368,7 +382,9 @@
     </div>
   </div>
 
-  <script src="js/shopping-bag.js"></script>
+  <script src="data/catalog.js"></script>
+  <script src="js/bag.js"></script>
+  <script src="js/shopping-bag-page.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>

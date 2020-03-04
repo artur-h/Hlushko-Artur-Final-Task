@@ -252,6 +252,7 @@ li {
   line-height: 18px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 .nav {
@@ -533,6 +534,10 @@ li {
 /* === / ARRIVALS === */
 
 /* === INFO === */
+.info {
+  display: flex;
+}
+
 .info__inner {
   display: flex;
   justify-content: space-between;
@@ -990,23 +995,21 @@ li {
   margin-bottom: 20px;
 }
 
-.item__size,
-.item__color {
+.item__detailed-info {
   display: inline-block;
   padding: 12px 0;
+  border: 1px solid #fff;
   width: 80px;
   font-size: 14px;
   text-align: center;
   cursor: pointer;
 }
 
-.item__color--selected,
-.item__size--selected {
+.item__detailed-info--selected {
   border: 1px solid #e5e5e5;
 }
 
-.item__size:not(:last-child),
-.item__color:not(:last-child) {
+.item__detailed-info:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -1025,6 +1028,7 @@ li {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 /* === / ITEM === */
 
@@ -1136,6 +1140,10 @@ li {
   display: flex;
 }
 
+.bag-promo > .container--wider {
+  border-bottom: none;
+}
+
 .bag-promo__text {
   margin: 0;
   padding: 13px 0;
@@ -1197,6 +1205,21 @@ li {
 
 .bag__total {
   font-size: 22px;
+}
+
+.bag__empty-text {
+  margin: 80px auto;
+  font-size: 24px;
+  text-align: center;
+}
+
+.bag__back-to-catalog {
+  text-decoration: underline;
+}
+
+.bag__back-to-catalog:hover {
+  color: #f14a58;
+  text-decoration: none;
 }
 /* === / BAG === */
 
@@ -2383,8 +2406,7 @@ li {
     width: 55px;
   }
 
-  .item__size:not(:last-child),
-  .item__color:not(:last-child) {
+  .item__detailed-info:not(:last-child) {
     margin-right: 20px;
   }
 
@@ -2545,6 +2567,14 @@ li {
   left: 0;
   z-index: 15;
   background-color: #fff;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.border-bottom-none {
+  border-bottom: none;
 }
 
 .show-menu {

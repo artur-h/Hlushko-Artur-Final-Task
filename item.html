@@ -14,7 +14,7 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="#" class="header__logo">
+        <a href="start.html" class="header__logo">
           <span class="header__logo-inner">
             <span>Template</span>
           </span>
@@ -29,7 +29,11 @@
             <img class="header__bag-icon-img" src="img/icons/bag-icon.png" alt="Shopping bag">
           </a>
           <a href="#" class="header__bag-quantity">
-            <div class="header__bag--inner">Bag (0)</div>
+            <div class="header__bag--inner">
+              Bag<span class="header__bag-price">
+              <span class="header__bag-currency">&#163;</span>236.50</span>
+              <span class="header__bag-amount">(4)</span>
+            </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
           <img src="img/icons/close-menu.png" alt="Close menu" class="header__close display-none" onclick="closeMenu(this)" id="close-icon">
@@ -118,7 +122,7 @@
             </div>
           </div>
         </div>
-        <div class="item__info">
+        <div class="item__info" id="item-info">
           <div class="item__text">
             <h3 class="item__name">
               Dark classic fit suit
@@ -134,20 +138,20 @@
           <div class="item__size-wrapper">
             <span class="item__size-description">Size:</span>
             <ul class="item__size-inner">
-              <li class="item__size item__size--selected">UK 52</li>
-              <li class="item__size">UK 54</li>
-              <li class="item__size">UK 56</li>
+              <li class="item__detailed-info" data-info="size">UK 52</li>
+              <li class="item__detailed-info" data-info="size">UK 54</li>
+              <li class="item__detailed-info" data-info="size">UK 56</li>
             </ul>
           </div>
           <div class="item__color-wrapper">
             <span class="item__color-description">Color:</span>
             <ul class="item__color-inner">
-              <li class="item__color">Black</li>
-              <li class="item__color item__color--selected">Blue</li>
+              <li class="item__detailed-info" data-info="color">Black</li>
+              <li class="item__detailed-info" data-info="color">Blue</li>
             </ul>
           </div>
           <div class="item__button-wrapper">
-            <a href="#" class="button">Add to bag</a>
+            <a href="" class="button">Add to bag</a>
           </div>
         </div>
       </div>
@@ -323,6 +327,9 @@
     </div>
   </div>
 
+  <script src="data/catalog.js"></script>
+  <script src="js/bag.js"></script>
+  <script src="js/item-page.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>

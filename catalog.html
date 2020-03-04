@@ -29,7 +29,11 @@
             <img class="header__bag-icon-img" src="img/icons/bag-icon.png" alt="Shopping bag">
           </a>
           <a href="#" class="header__bag-quantity">
-            <div class="header__bag--inner">Bag (0)</div>
+            <div class="header__bag--inner">
+              Bag<span class="header__bag-price">
+              <span class="header__bag-currency">&#163;</span>236.50</span>
+              <span class="header__bag-amount">(4)</span>
+            </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
           <img src="img/icons/close-menu.png" alt="Close menu" class="header__close display-none" onclick="closeMenu(this)" id="close-icon">
@@ -783,7 +787,8 @@
     </div>
   </div>
 
-  <script src="js/catalog.js"></script>
+  <script src="data/catalog.js"></script>
+  <script src="js/catalog-page.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>

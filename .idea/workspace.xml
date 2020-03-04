@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="714587cb-4112-4169-91c4-b1fa6a5cad1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/catalog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/shopping-bag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/bag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/item-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/catalog-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shopping-bag.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/shopping-bag-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping-bag.html" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-bag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/start.html" afterDir="false" />
     </list>
@@ -61,7 +61,7 @@
       <updated>1582400800079</updated>
       <workItem from="1582400802967" duration="144061000" />
       <workItem from="1583049680092" duration="10037000" />
-      <workItem from="1583256000987" duration="19255000" />
+      <workItem from="1583256000987" duration="38944000" />
     </task>
     <servers />
   </component>
@@ -69,17 +69,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583258432968">
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583359869439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583258432968" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583359869439" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1582840204208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582840204208" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582913978565">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583341794673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582913978565" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583341794673" />
   </component>
 </project>
