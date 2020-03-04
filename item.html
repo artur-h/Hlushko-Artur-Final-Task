@@ -28,11 +28,11 @@
           <a href="#" class="header__bag-icon">
             <img class="header__bag-icon-img" src="img/icons/bag-icon.png" alt="Shopping bag">
           </a>
-          <a href="#" class="header__bag-quantity">
+          <a href="shopping-bag.html" class="header__bag-quantity">
             <div class="header__bag--inner">
-              Bag<span class="header__bag-price">
-              <span class="header__bag-currency">&#163;</span>236.50</span>
-              <span class="header__bag-amount">(4)</span>
+              Bag<span class="header__bag-price" id="total-price-header-wrapper">
+              <span class="header__bag-currency">&#163;</span><span id="total-price-header">236.50</span></span>
+              <span class="header__bag-amount" id="total-bag-quantity">(4)</span>
             </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
@@ -151,7 +151,7 @@
             </ul>
           </div>
           <div class="item__button-wrapper">
-            <a href="" class="button">Add to bag</a>
+            <button class="button button--add-to-bag" data-identifier="80d32566-d81c-4ba0-9edf-0eceda3b4360" id="add-to-bag-btn">Add to bag</button>
           </div>
         </div>
       </div>

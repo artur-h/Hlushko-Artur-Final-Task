@@ -12,31 +12,14 @@ let emptyText = 'Your shopping bag is empty. Use <a href="catalog.html">Catalog<
 let purchaseText = 'Thank you for your purchase';
 
 let displayedBag = document.getElementById('displayed-bag');
-displayedBag.addEventListener('click', function(e) {
-  let target = e.target;
-  let identifier = target.dataset.identifier;
+if (displayedBag != undefined) {
+  displayedBag.addEventListener('click', function(e) {
+    let target = e.target;
+    let identifier = target.dataset.identifier;
 
-  if (target.className === 'bag__increase-btn' || target.className === 'bag__increase-sign') {
-    bag[identifier]++;
+    if (target.className === 'bag__increase-btn' || target.className === 'bag__increase-sign') {
+      bag[identifier]++;
 
-    let elems = displayedBag.querySelectorAll('.bag__quantity');
-
-    for (let i = 0; i < elems.length; i++) {
-      if (elems[i].dataset.identifier === identifier) {
-        elems[i].textContent = bag[identifier];
-      }
-    }
-
-    showTotal();
-  }
-
-  if (target.className === 'bag__decrease-btn' || target.className === 'bag__decrease-sign') {
-    bag[identifier]--;
-
-    if (bag[identifier] < 1) {
-      removeItem();
-      showTotal();
-    } else {
       let elems = displayedBag.querySelectorAll('.bag__quantity');
 
       for (let i = 0; i < elems.length; i++) {
@@ -47,36 +30,134 @@ displayedBag.addEventListener('click', function(e) {
 
       showTotal();
     }
-  }
 
-  if (target.className === 'bag__remove-item-btn') {
-    removeItem();
-    showTotal();
-  }
+    if (target.className === 'bag__decrease-btn' || target.className === 'bag__decrease-sign') {
+      bag[identifier]--;
 
-  if (target.className === 'bag__empty-btn') {
-    emptyBag();
-    showTotal();
-  }
+      if (bag[identifier] < 1) {
+        removeItem();
+        showTotal();
+      } else {
+        let elems = displayedBag.querySelectorAll('.bag__quantity');
 
-  if (target.className === 'button button--checkout') {
-    checkout();
-    showTotal();
-  }
+        for (let i = 0; i < elems.length; i++) {
+          if (elems[i].dataset.identifier === identifier) {
+            elems[i].textContent = bag[identifier];
+          }
+        }
 
-  function removeItem() {
-    let elems = displayedBag.querySelectorAll('.bag__item');
-
-    for (let i = 0; i < elems.length; i++) {
-      if (elems[i].dataset.identifier === identifier) {
-        elems[i].remove();
+        showTotal();
       }
     }
 
-    delete bag[identifier];
-  }
+    if (target.className === 'bag__remove-item-btn') {
+      removeItem();
+      showTotal();
+    }
 
-  function showTotal() {
+    if (target.className === 'bag__empty-btn') {
+      emptyBag();
+      showTotal();
+    }
+
+    if (target.className === 'button button--checkout') {
+      checkout();
+      showTotal();
+    }
+
+    function removeItem() {
+      let elems = displayedBag.querySelectorAll('.bag__item');
+
+      for (let i = 0; i < elems.length; i++) {
+        if (elems[i].dataset.identifier === identifier) {
+          elems[i].remove();
+        }
+      }
+
+      delete bag[identifier];
+    }
+
+    function showTotal() {
+      let totalPrice = 0;
+      let totalQuantity = 0;
+
+      for (let key in bag) {
+        let item;
+
+        for (let i = 0; i < catalog.length; i++) {
+          if (key === catalog[i].id) item = catalog[i];
+        }
+
+        let totalItemCost = item.discountedPrice * bag[key];
+        totalPrice += totalItemCost;
+
+        totalQuantity += bag[key];
+      }
+
+      totalPrice -= discount;
+      totalPrice = totalPrice.toFixed(2);
+
+      let totalCheckoutPrice = document.getElementById('total-price-checkout');
+      let totalHeaderPrice = document.getElementById('total-price-header');
+      let totalPriceHeaderWrapper = document.getElementById('total-price-header-wrapper');
+      let totalBagQuantity = document.getElementById('total-bag-quantity');
+
+      if (totalCheckoutPrice != undefined) {
+        totalCheckoutPrice.textContent = `${totalPrice}`;
+      }
+      totalBagQuantity.textContent = `(${totalQuantity})`;
+      totalHeaderPrice.textContent = `${totalPrice}`;
+
+      if (Object.keys(bag).length === 0) {
+        if (target.className !== 'button button--checkout') {
+          emptyBag();
+        }
+        totalPriceHeaderWrapper.className = 'header__bag-price display-none';
+      }
+    }
+
+    function emptyBag() {
+      let bagInner = document.getElementById('bag-inner');
+      let bagPromo = document.getElementById('bag-promo');
+      let emptyText = document.createElement('div');
+
+      emptyText.className = 'bag__empty-text';
+      emptyText.innerHTML = 'Your shopping bag is empty. Use <a href="catalog.html" class="bag__back-to-catalog">Catalog</a> to add new items';
+      bagInner.innerHTML = '';
+      bagPromo.innerHTML = '';
+      bagInner.append(emptyText);
+
+      bag = {};
+    }
+
+    function checkout() {
+      let bagInner = document.getElementById('bag-inner');
+      let bagPromo = document.getElementById('bag-promo');
+      let emptyText = document.createElement('div');
+
+      emptyText.className = 'bag__empty-text';
+      emptyText.innerHTML = 'Thank you for your purchase';
+      bagInner.innerHTML = '';
+      bagPromo.innerHTML = '';
+      bagInner.append(emptyText);
+
+      bag = {};
+    }
+  });
+}
+
+let addToBagBtn = document.getElementById('add-to-bag-btn');
+if (addToBagBtn != undefined) {
+  addToBagBtn.addEventListener('click', function(e) {
+    let target = e.target;
+    let identifier = target.dataset.identifier;
+
+    if (bag[identifier] === undefined) {
+      bag[identifier] = 1;
+    } else {
+      bag[identifier]++;
+    }
+
     let totalPrice = 0;
     let totalQuantity = 0;
 
@@ -96,50 +177,11 @@ displayedBag.addEventListener('click', function(e) {
     totalPrice -= discount;
     totalPrice = totalPrice.toFixed(2);
 
-    let totalCheckoutPrice = document.getElementById('total-price-checkout');
     let totalHeaderPrice = document.getElementById('total-price-header');
     let totalPriceHeaderWrapper = document.getElementById('total-price-header-wrapper');
     let totalBagQuantity = document.getElementById('total-bag-quantity');
 
-    if (totalCheckoutPrice != undefined) {
-      totalCheckoutPrice.textContent = `${totalPrice}`;
-    }
     totalBagQuantity.textContent = `(${totalQuantity})`;
     totalHeaderPrice.textContent = `${totalPrice}`;
-
-    if (Object.keys(bag).length === 0) {
-      if (target.className !== 'button button--checkout') {
-        emptyBag();
-      }
-      totalPriceHeaderWrapper.className = 'header__bag-price display-none';
-    }
-  }
-
-  function emptyBag() {
-    let bagInner = document.getElementById('bag-inner');
-    let bagPromo = document.getElementById('bag-promo');
-    let emptyText = document.createElement('div');
-
-    emptyText.className = 'bag__empty-text';
-    emptyText.innerHTML = 'Your shopping bag is empty. Use <a href="catalog.html" class="bag__back-to-catalog">Catalog</a> to add new items';
-    bagInner.innerHTML = '';
-    bagPromo.innerHTML = '';
-    bagInner.append(emptyText);
-
-    bag = {};
-  }
-
-  function checkout() {
-    let bagInner = document.getElementById('bag-inner');
-    let bagPromo = document.getElementById('bag-promo');
-    let emptyText = document.createElement('div');
-
-    emptyText.className = 'bag__empty-text';
-    emptyText.innerHTML = 'Thank you for your purchase';
-    bagInner.innerHTML = '';
-    bagPromo.innerHTML = '';
-    bagInner.append(emptyText);
-
-    bag = {};
-  }
-});
+  });
+}

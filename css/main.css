@@ -211,6 +211,11 @@ li {
   color: #f14a58;
   border: 1px solid #f14a58;
 }
+
+.button--add-to-bag {
+  background: none;
+  cursor: pointer;
+}
 /* === / COMMON === */
 
 /* === HEADER === */
