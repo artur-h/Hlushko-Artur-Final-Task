@@ -894,6 +894,10 @@ li {
   font-style: italic;
   color: #757575;
 }
+
+.promo__product-name {
+  overflow: hidden;
+}
 /* === / PROMO === */
 
 /* === ITEM === */
@@ -1326,7 +1330,12 @@ li {
   .arrivals__product-inner-wrapper-3rd-row {
     display: none;
   }
+}
 
+@media screen and (max-width: 1065px) and (min-width: 1025px){
+  .offer__equality-sign {
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -1980,6 +1989,7 @@ li {
 
   .offer__plus-sign {
     align-self: center;
+    min-width: 17px;
   }
 
   .offer__product-list > .product {
