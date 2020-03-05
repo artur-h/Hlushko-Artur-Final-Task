@@ -692,6 +692,11 @@ li {
   color: #f14a58;
 }
 
+.filter__menu-item--selected {
+  background-color: #f7f7f7;
+  color: #f14a58;
+}
+
 .filter__item {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;

@@ -1,10 +1,54 @@
 'use strict';
 
+let selectedFilterElements = {
+  'fashion': [],
+  'productType': [],
+  'color': [],
+  'brand': [],
+  'size': [],
+  'priceRange': []
+};
+
+let optionElements = document.querySelectorAll('.filter__menu-item');
+let notSelectedElements = [];
+for (let i = 0; i < optionElements.length; i++) {
+  if (optionElements[i].textContent === 'Not selected') {
+    notSelectedElements.push(optionElements[i]);
+  }
+}
+
+for (let i = 0; i < notSelectedElements.length; i++) {
+  notSelectedElements[i].className = 'filter__menu-item filter__menu-item--selected';
+}
+
+for (let i = 0; i < notSelectedElements.length; i++) {
+  for (let key in selectedFilterElements) {
+    selectedFilterElements[key].push(notSelectedElements[i]);
+    i++;
+  }
+}
+
 let tabMenu = document.getElementById('tab-menu');
 tabMenu.addEventListener('click', function(e) {
   let target = e.target;
 
-  if (target.className === 'filter__menu-item') {
+  let data = target.dataset.type;
+  let el = document.querySelectorAll('*');
+  let elems = [];
+
+  for (let key in selectedFilterElements) {
+    if (key === data) {
+      selectedFilterElements[key].push(target);
+
+      if (selectedFilterElements[key].length === 2) {
+        selectedFilterElements[key][0].className = 'filter__menu-item';
+        selectedFilterElements[key][1].className = 'filter__menu-item filter__menu-item--selected';
+        selectedFilterElements[key].shift();
+      }
+    }
+  }
+
+  if (target.className === 'filter__menu-item' || target.className === 'filter__menu-item filter__menu-item--selected') {
     let data = target.dataset.type;
     let el = document.querySelectorAll('*');
     let elems = [];
