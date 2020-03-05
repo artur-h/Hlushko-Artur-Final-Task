@@ -67,10 +67,12 @@ if (displayedBag != undefined) {
 
     function removeItem() {
       let elems = displayedBag.querySelectorAll('.bag__item');
+      let bagInner = document.getElementById('bag-inner');
 
       for (let i = 0; i < elems.length; i++) {
         if (elems[i].dataset.identifier === identifier) {
-          elems[i].remove();
+          // elems[i].remove();
+          bagInner.removeChild(elems[i]);
         }
       }
 
@@ -103,10 +105,10 @@ if (displayedBag != undefined) {
       let totalBagQuantity = document.getElementById('total-bag-quantity');
 
       if (totalCheckoutPrice != undefined) {
-        totalCheckoutPrice.textContent = `${totalPrice}`;
+        totalCheckoutPrice.textContent = '' + totalPrice;
       }
-      totalBagQuantity.textContent = `(${totalQuantity})`;
-      totalHeaderPrice.textContent = `${totalPrice}`;
+      totalBagQuantity.textContent = '' + totalQuantity;
+      totalHeaderPrice.textContent = '' + totalPrice;
 
       if (Object.keys(bag).length === 0) {
         if (target.className !== 'button button--checkout') {
@@ -125,7 +127,7 @@ if (displayedBag != undefined) {
       emptyText.innerHTML = 'Your shopping bag is empty. Use <a href="catalog.html" class="bag__back-to-catalog">Catalog</a> to add new items';
       bagInner.innerHTML = '';
       bagPromo.innerHTML = '';
-      bagInner.append(emptyText);
+      bagInner.appendChild(emptyText);
 
       bag = {};
     }
@@ -139,7 +141,7 @@ if (displayedBag != undefined) {
       emptyText.innerHTML = 'Thank you for your purchase';
       bagInner.innerHTML = '';
       bagPromo.innerHTML = '';
-      bagInner.append(emptyText);
+      bagInner.appendChild(emptyText);
 
       bag = {};
     }
@@ -181,7 +183,7 @@ if (addToBagBtn != undefined) {
     let totalPriceHeaderWrapper = document.getElementById('total-price-header-wrapper');
     let totalBagQuantity = document.getElementById('total-bag-quantity');
 
-    totalBagQuantity.textContent = `(${totalQuantity})`;
-    totalHeaderPrice.textContent = `${totalPrice}`;
+    totalBagQuantity.textContent = totalQuantity.toString();
+    totalHeaderPrice.textContent = '' + totalPrice;
   });
 }
