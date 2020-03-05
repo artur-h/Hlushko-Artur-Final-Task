@@ -1974,8 +1974,12 @@ li {
   .offer__product-list {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+  }
+
+  .offer__plus-sign {
+    align-self: center;
   }
 
   .offer__product-list > .product {
@@ -2291,6 +2295,12 @@ li {
 
   .arrivals__subtitle {
     margin-top: 10px;
+  }
+
+  .arrivals__product-inner-wrapper,
+  .arrivals__product-inner-wrapper-2nd-row,
+  .arrivals__product-inner-wrapper-3rd-row {
+    justify-content: space-around;
   }
 
   .arrivals__product-inner-wrapper {

@@ -32,26 +32,22 @@ let tabMenu = document.getElementById('tab-menu');
 tabMenu.addEventListener('click', function(e) {
   let target = e.target;
 
-  let data = target.dataset.type;
-  let el = document.querySelectorAll('*');
-  let elems = [];
-
-  for (let key in selectedFilterElements) {
-    if (key === data) {
-      selectedFilterElements[key].push(target);
-
-      if (selectedFilterElements[key].length === 2) {
-        selectedFilterElements[key][0].className = 'filter__menu-item';
-        selectedFilterElements[key][1].className = 'filter__menu-item filter__menu-item--selected';
-        selectedFilterElements[key].shift();
-      }
-    }
-  }
-
   if (target.className === 'filter__menu-item' || target.className === 'filter__menu-item filter__menu-item--selected') {
     let data = target.dataset.type;
     let el = document.querySelectorAll('*');
     let elems = [];
+
+    for (let key in selectedFilterElements) {
+      if (key === data) {
+        selectedFilterElements[key].push(target);
+
+        if (selectedFilterElements[key].length === 2) {
+          selectedFilterElements[key][0].className = 'filter__menu-item';
+          selectedFilterElements[key][1].className = 'filter__menu-item filter__menu-item--selected';
+          selectedFilterElements[key].shift();
+        }
+      }
+    }
 
     for (let i = 0; i < el.length; i++) {
       if (el[i].dataset.type === data && el[i].className !== 'filter__menu-item') {
