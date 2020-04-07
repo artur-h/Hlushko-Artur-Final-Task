@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="714587cb-4112-4169-91c4-b1fa6a5cad1e" name="Default Changelist" comment="">
+    <list default="true" id="24684ead-3e39-45a3-8780-ed3c3dc1420e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/lodash.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.html" beforeDir="false" afterPath="$PROJECT_DIR$/item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/catalog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/catalog-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/catalog-page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +24,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1YB0hdlxHoHtWUV2M2YlBVRkiBQ" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\User\Desktop\Projects\store-project\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aBEGoVEEDMLmn1lUBMbjL4BK3J" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,32 +39,34 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\img\icons" />
-      <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\img\promo" />
-      <recent name="C:\Users\Penton7\Desktop\Projects\epam-courses\final-task\data" />
-    </key>
+  <component name="RunManager">
+    <configuration name="catalog-page.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/catalog-page.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.catalog-page.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="714587cb-4112-4169-91c4-b1fa6a5cad1e" name="Default Changelist" comment="" />
-      <created>1582400800079</created>
+      <changelist id="24684ead-3e39-45a3-8780-ed3c3dc1420e" name="Default Changelist" comment="" />
+      <created>1586200495584</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582400800079</updated>
-      <workItem from="1582400802967" duration="144061000" />
-      <workItem from="1583049680092" duration="10037000" />
-      <workItem from="1583256000987" duration="53646000" />
+      <updated>1586200495584</updated>
+      <workItem from="1586200503763" duration="5172000" />
+      <workItem from="1586238608714" duration="1820000" />
+      <workItem from="1586241633943" duration="26837000" />
     </task>
     <servers />
   </component>
@@ -62,17 +74,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583359869439">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1586241613073">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583359869439" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1582840204208">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586241613073" />
+    <state width="1578" height="218" key="GridCell.Tab.0.bottom" timestamp="1586241615369">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582840204208" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583341794673">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1578" height="218" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586241615369" />
+    <state width="1578" height="218" key="GridCell.Tab.0.center" timestamp="1586241615369">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583341794673" />
+    <state width="1578" height="218" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586241615369" />
+    <state width="1578" height="218" key="GridCell.Tab.0.left" timestamp="1586241615369">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="218" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586241615369" />
+    <state width="1578" height="218" key="GridCell.Tab.0.right" timestamp="1586241615369">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="218" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586241615369" />
+    <state x="301" y="61" key="SettingsEditor" timestamp="1586252890439">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="301" y="61" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586252890439" />
   </component>
 </project>

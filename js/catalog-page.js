@@ -164,3 +164,27 @@ tabletTabMenu.addEventListener('click', function(e) {
     }
   }
 });
+
+function renderProductItems() {
+  const productTemplate = document.getElementById('product-template').innerHTML;
+  const productTemplateFn = _.template(productTemplate);
+  const productContainer = document.querySelectorAll('.arrivals__product-container');
+  const filteredCatalog = catalog.filter(function(item) {
+    return item.fashion === 'Casual style' && item.category === 'women';
+  });
+  filteredCatalog.sort(function(a, b) {
+    return -(new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime());
+  });
+
+  let totalItemCount = 4;
+  let currentItem = 0;
+
+  for (let containerCount = 0; containerCount < productContainer.length; containerCount++) {
+    for (let counter = 0; counter < totalItemCount && currentItem < filteredCatalog.length; counter++) {
+      productContainer[containerCount].innerHTML += productTemplateFn(filteredCatalog[currentItem]);
+      currentItem++;
+    }
+  }
+}
+
+renderProductItems();
