@@ -165,10 +165,18 @@ tabletTabMenu.addEventListener('click', function(e) {
   }
 });
 
-function renderProductItems() {
+let currentWindowWidth = getWindowWidth();
+let updatedWindowWidth ;
+
+function renderProductItems(itemsInContainer) {
   const productTemplate = document.getElementById('product-template').innerHTML;
   const productTemplateFn = _.template(productTemplate);
   const productContainer = document.querySelectorAll('.arrivals__product-container');
+
+  for (let i = 0; i < productContainer.length; i++) {
+    if (productContainer[i].innerHTML !== '') productContainer[i].innerHTML = '';
+  }
+
   const filteredCatalog = catalog.filter(function(item) {
     return item.fashion === 'Casual style' && item.category === 'women';
   });
@@ -176,15 +184,56 @@ function renderProductItems() {
     return -(new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime());
   });
 
-  let totalItemCount = 4;
   let currentItem = 0;
 
   for (let containerCount = 0; containerCount < productContainer.length; containerCount++) {
-    for (let counter = 0; counter < totalItemCount && currentItem < filteredCatalog.length; counter++) {
+    for (let counter = 0; counter < itemsInContainer && currentItem < filteredCatalog.length; counter++) {
       productContainer[containerCount].innerHTML += productTemplateFn(filteredCatalog[currentItem]);
       currentItem++;
     }
   }
+
+  currentWindowWidth = getWindowWidth();
+  updatedWindowWidth = getWindowWidth();
 }
 
-renderProductItems();
+if (window.innerWidth >= 1025) {
+  renderProductItems(4);
+} else if (window.innerWidth <= 1024 && window.innerWidth >= 768) {
+  renderProductItems(3);
+} else if (window.innerWidth <= 767) {
+  renderProductItems(2);
+}
+
+
+function getWindowWidth() {
+  let width = window.innerWidth;
+
+  if (width >= 1025) {
+    width = 'desktop';
+  } else if (width <= 1024 && width >= 768) {
+    width = 'tablet';
+  } else if (width <= 767) {
+    width = 'mobile';
+  }
+
+  return width;
+}
+
+function updateWindowWidth() {
+  updatedWindowWidth = getWindowWidth();
+  const same = currentWindowWidth === updatedWindowWidth;
+  const width = window.innerWidth;
+
+  if (width >= 1025 && !same) {
+    renderProductItems(4);
+  } else if (width <= 1024 && width >= 768 && !same) {
+    renderProductItems(3);
+  } else if (width <= 767 && !same) {
+    renderProductItems(2);
+  }
+}
+
+
+
+window.addEventListener('resize', updateWindowWidth);
