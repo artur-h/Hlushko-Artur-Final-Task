@@ -179,7 +179,7 @@ window.catalog = [{
     colors: ['Raw umber', 'Dark blue'],
     sizes: ['UK 18', 'UK 19'],
     thumbnail: './img/products/Oversized_Cardigan.png',
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['./img/item/Oversized_Cardigan/thumb_1.png', './img/item/Oversized_Cardigan/thumb_2.jpg', './img/item/Oversized_Cardigan/thumb_3.jpeg']
 }, {
     id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
     dateAdded: '2017-04-05T10:04:16.000Z',

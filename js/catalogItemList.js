@@ -36,14 +36,14 @@ function createCatalogItemList() {
 
   function _updateWindowWidth() {
     _updatedWindowWidth = _getWindowWidth();
-    const same = _currentWindowWidth === _updatedWindowWidth;
+    const isSame = _currentWindowWidth === _updatedWindowWidth;
     const width = window.innerWidth;
 
-    if (width >= 1025 && !same) {
+    if (width >= 1025 && !isSame) {
       _renderCatalogItems(4);
-    } else if (width <= 1024 && width >= 768 && !same) {
+    } else if (width <= 1024 && width >= 768 && !isSame) {
       _renderCatalogItems(3);
-    } else if (width <= 767 && !same) {
+    } else if (width <= 767 && !isSame) {
       _renderCatalogItems(2);
     }
   }
@@ -74,6 +74,5 @@ function createCatalogItemList() {
     }
 
     _currentWindowWidth = _getWindowWidth();
-    _updatedWindowWidth = _getWindowWidth();
   }
 }

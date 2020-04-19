@@ -167,3 +167,20 @@ tabletTabMenu.addEventListener('click', function(e) {
     }
   }
 });
+
+function addToItemDetailLocalStorage(event) {
+  const  itemIdentifier = getClosest(event.target, '[data-identifier]');
+  if (!itemIdentifier) return;
+  const id = itemIdentifier.dataset.identifier
+  const item = catalog.find(function(item) {return item.id === id})
+  localStorage.setItem('itemDetailPage', JSON.stringify(item));
+}
+
+function getClosest(elem, selector) {
+  for ( ; elem && elem !== document; elem = elem.parentNode ) {
+    if ( elem.matches( selector ) ) return elem;
+  }
+  return null;
+}
+
+document.addEventListener('click', addToItemDetailLocalStorage);
