@@ -47,7 +47,9 @@ function createItemDetailPage() {
 
 function renderItemInfo(allInfo, type) {
   return allInfo.map(function(info) {
-    return `<li class="item__detailed-info" data-info="${type}">${info}</li>`
+    return `<li class="item__detailed-info" data-info="${type}">
+      <span class="item__detailed-text">${info}</span>
+    </li>`
   }).join('');
 }
 
