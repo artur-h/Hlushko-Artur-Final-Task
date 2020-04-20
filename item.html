@@ -107,13 +107,13 @@
     <div class="item__inner">
       <div class="item__preview">
         <div class="item__preview-wrapper">
-          <div style="background-image: url('<%-thumbnail%>')" class="item__preview-full"></div>
+          <div style='background-image: url("<%-thumbnail%>")' class="item__preview-full"></div>
           <div class="item__thumb-wrapper">
-            <div style="background-image: url('<%-preview[0]%>')" class="item__thumb-inner-wrapper">
+            <div style='background-image: url("<%-preview[0]%>")' class="item__thumb-inner-wrapper">
               <div class="item__overlay"></div>
             </div>
-            <div style="background-image: url('<%-preview[1]%>')" class="item__thumb-inner-wrapper"></div>
-            <div style="background-image: url('<%-preview[2]%>')" class="item__thumb-inner-wrapper"></div>
+            <div style='background-image: url("<%-preview[1]%>")' class="item__thumb-inner-wrapper"></div>
+            <div style='background-image: url("<%-preview[2]%>")' class="item__thumb-inner-wrapper"></div>
           </div>
         </div>
       </div>
@@ -127,10 +127,10 @@
           </p>
           <div class="item__price">
             <span class="item__currency">&#163;</span>
-            <% if (discountedPrice < price) { %>
-            <%-discountedPrice.toFixed(2)%>
-            <% } else if (discountedPrice === price || discountedPrice === null) { %>
+            <% if (discountedPrice === null || discountedPrice === price) { %>
             <%-price.toFixed(2)%>
+            <% } else if (discountedPrice < price) { %>
+            <%-discountedPrice.toFixed(2)%>
             <% } %>
           </div>
         </div>
@@ -334,17 +334,3 @@
 <script src="js/common.js"></script>
 </body>
 </html>
-
-
-<!--<div class="item__thumb-wrapper">-->
-<!--  <div class="item__thumb-inner-wrapper">-->
-<!--    <div class="item__overlay"></div>-->
-<!--    <img src="<%-preview[0]%>" alt="<%-title%>'s first small thumbnail" class="item__thumb-img">-->
-<!--  </div>-->
-<!--  <div class="item__thumb-inner-wrapper">-->
-<!--    <img src="<%-preview[1]%>" alt="<%-title%>'s second small thumbnail" class="item__thumb-img">-->
-<!--  </div>-->
-<!--  <div class="item__thumb-inner-wrapper">-->
-<!--    <img src="<%-preview[2]%>" alt="<%-title%>'s third small thumbnail" class="item__thumb-img">-->
-<!--  </div>-->
-<!--</div>-->

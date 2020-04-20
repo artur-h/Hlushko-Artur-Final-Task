@@ -170,16 +170,30 @@ tabletTabMenu.addEventListener('click', function(e) {
 
 function addToItemDetailLocalStorage(event) {
   const  itemIdentifier = getClosest(event.target, '[data-identifier]');
+
   if (!itemIdentifier) return;
+
   const id = itemIdentifier.dataset.identifier
-  const item = catalog.find(function(item) {return item.id === id})
+  let item;
+
+  for (let i = 0; i < catalog.length; i++) {
+    if (catalog[i].id === id) item = catalog[i];
+  }
+
   localStorage.setItem('itemDetailPage', JSON.stringify(item));
 }
 
 function getClosest(elem, selector) {
-  for ( ; elem && elem !== document; elem = elem.parentNode ) {
-    if ( elem.matches( selector ) ) return elem;
+  if (elem.msMatchesSelector) {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if ( elem.msMatchesSelector( selector ) ) return elem;
+    }
+  } else {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if ( elem.matches( selector ) ) return elem;
+    }
   }
+
   return null;
 }
 
