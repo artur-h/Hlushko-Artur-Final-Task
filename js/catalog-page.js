@@ -169,7 +169,7 @@ tabletTabMenu.addEventListener('click', function(e) {
 });
 
 function addToItemDetailLocalStorage(event) {
-  const  itemIdentifier = getClosest(event.target, '[data-identifier]');
+  const itemIdentifier = getClosest(event.target, '[data-identifier]');
 
   if (!itemIdentifier) return;
 
@@ -180,21 +180,10 @@ function addToItemDetailLocalStorage(event) {
     if (catalog[i].id === id) item = catalog[i];
   }
 
+  if (item.sizes.length !== 0) item.chosenSize = item.sizes[0];
+  if (item.colors.length !== 0) item.chosenColor = item.colors[0];
+
   localStorage.setItem('itemDetailPage', JSON.stringify(item));
-}
-
-function getClosest(elem, selector) {
-  if (elem.msMatchesSelector) {
-    for ( ; elem && elem !== document; elem = elem.parentNode ) {
-      if ( elem.msMatchesSelector( selector ) ) return elem;
-    }
-  } else {
-    for ( ; elem && elem !== document; elem = elem.parentNode ) {
-      if ( elem.matches( selector ) ) return elem;
-    }
-  }
-
-  return null;
 }
 
 document.addEventListener('click', addToItemDetailLocalStorage);

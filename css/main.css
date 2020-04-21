@@ -1023,7 +1023,7 @@ li {
 }
 
 .item__detailed-info {
-  display: block;
+  display: inline-block;
   padding: 12px 0;
   border: 1px solid #fff;
   width: 80px;
@@ -1031,10 +1031,6 @@ li {
   text-align: center;
   cursor: pointer;
   position: relative;
-}
-
-.item__detailed-info--selected {
-  border: 1px solid #e5e5e5;
 }
 
 .item__detailed-info:not(:last-child) {
@@ -1070,6 +1066,16 @@ li {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+
+.item__input {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.item__input:checked + .item__detailed-info {
+  border: 1px solid #e5e5e5;
 }
 /* === / ITEM === */
 

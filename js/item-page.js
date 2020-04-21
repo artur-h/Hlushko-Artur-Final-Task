@@ -7,48 +7,33 @@ function createItemDetailPage() {
   const itemContainer = document.getElementById('item-container');
   itemContainer.innerHTML = itemTemplateFn(item);
 
-  let selectedItemInfo = {
-    'sizes': [],
-    'colors': [],
-  };
-
-  let selectedInfoElements = document.querySelectorAll('.item__detailed-info.item__detailed-info--selected');
-
-  for (let i = 0; i < selectedInfoElements.length; i++) {
-    for (let key in selectedItemInfo) {
-      selectedItemInfo[key].push(selectedInfoElements[i]);
-      i++;
-    }
-  }
-
-  let itemInfo = document.querySelector('.item__info');
-  itemInfo.addEventListener('click', function(e) {
-    let target = e.target;
-
-    if (target.className === 'item__detailed-info') {
-      target.className = 'item__detailed-info item__detailed-info--selected';
-
-      let data = target.dataset.info;
-
-      for (let key in selectedItemInfo) {
-        if (key === data) {
-          selectedItemInfo[key].push(target);
-
-          if (selectedItemInfo[key].length === 2) {
-            selectedItemInfo[key][0].className = 'item__detailed-info';
-            selectedItemInfo[key][1].className = 'item__detailed-info item__detailed-info--selected';
-            selectedItemInfo[key].shift();
-          }
-        }
-      }
-    }
-  });
+  const info = document.querySelector('[data-container="item-info"]');
+  info.addEventListener('click', updateChosenItemDetails);
 }
 
 function renderItemInfo(allInfo, type) {
-  return allInfo.map(function(info) {
-    return '<li class="item__detailed-info" data-info="' + type + '"> <span class="item__detailed-text">' + info + '</span> </li>'
+  return allInfo.map(function(info, index) {
+    let input;
+
+    index !== 0
+      ? input = '<input data-chosen="' + type + '" type="radio" id="radio' + info + '" name="radio' + type + '" value="' + info + '" class="item__input">'
+      : input = '<input checked data-chosen="'+ type + '" type="radio" id="radio' + info + '" name="radio' + type + '" value="' + info + '" class="item__input">';
+
+    const label = '<label for="radio' + info + '" class="item__detailed-info"> <span class="item__detailed-text">' + info + '</span> </label>';
+
+    return input + label;
   }).join('');
 }
 
 createItemDetailPage();
+
+function updateChosenItemDetails(event) {
+  const target = event.target;
+
+  if (target.hasAttribute('data-chosen')) {
+    const item = JSON.parse(localStorage.getItem('itemDetailPage'));
+    const prop = 'chosen' + target.dataset.chosen;
+    item[prop] = target.value;
+    localStorage.setItem('itemDetailPage', JSON.stringify(item));
+  }
+}
