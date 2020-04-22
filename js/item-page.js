@@ -8,7 +8,8 @@ function createItemDetailPage() {
   itemContainer.innerHTML = itemTemplateFn(item);
 
   const info = document.querySelector('[data-container="item-info"]');
-  info.addEventListener('click', updateChosenItemDetails);
+  info.addEventListener('click', updateChosenItem);
+
 }
 
 function renderItemInfo(allInfo, type) {
@@ -27,7 +28,7 @@ function renderItemInfo(allInfo, type) {
 
 createItemDetailPage();
 
-function updateChosenItemDetails(event) {
+function updateChosenItem(event) {
   const target = event.target;
 
   if (target.hasAttribute('data-chosen')) {
@@ -35,5 +36,23 @@ function updateChosenItemDetails(event) {
     const prop = 'chosen' + target.dataset.chosen;
     item[prop] = target.value;
     localStorage.setItem('itemDetailPage', JSON.stringify(item));
+  }
+
+  if (target.id === 'addToBag') {
+    const item = JSON.parse(localStorage.getItem('itemDetailPage'));
+
+    const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+    const itemIndexInShoppingBag = shoppingBag.findIndex(function(bagItem) {
+      if (bagItem.id === item.id && bagItem.chosenColor === item.chosenColor && bagItem.chosenSize === item.chosenSize) return true;
+    })
+    console.log(itemIndexInShoppingBag)
+    if (itemIndexInShoppingBag !== -1) {
+      shoppingBag[itemIndexInShoppingBag].quantity++
+    } else {
+      item.quantity = 1;
+      shoppingBag.push(item)
+    }
+
+    localStorage.setItem('shoppingBag', JSON.stringify(shoppingBag));
   }
 }
