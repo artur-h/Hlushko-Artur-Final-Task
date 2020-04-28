@@ -187,3 +187,53 @@ if (addToBagBtn != undefined) {
     totalHeaderPrice.textContent = '' + totalPrice;
   });
 }
+
+function calculateTotalPriceAndQuantity(bag) {
+  if (bag.length === 0) {
+    return null;
+  } else {
+
+    let totalPrice = 0;
+    for (let i = 0; i < bag.length; i++) {
+      if (bag[i].discountedPrice === null || bag[i].discountedPrice === bag[i].price) {
+        totalPrice += bag[i].price * bag[i].quantity;
+      } else {
+        totalPrice += bag[i].discountedPrice * bag[i].quantity;
+      }
+    }
+
+    let totalQuantity = 0;
+    for (let i = 0; i < bag.length; i++) {
+      totalQuantity += bag[i].quantity;
+    }
+
+    return {
+      price: totalPrice.toFixed(2),
+      quantity: totalQuantity
+    };
+  }
+}
+
+function renderBagInfoInHeader(total) {
+  const $priceWrapper = document.getElementById('total-price-header-wrapper');
+  const $price = document.getElementById('total-price-header');
+  const $quantity = document.getElementById('total-bag-quantity');
+
+  if (total === null) {
+    $priceWrapper.className = 'header__bag-price hide';
+    $price.innerText = '0';
+    $quantity.innerText = '0';
+  } else {
+    $priceWrapper.className = 'header__bag-price';
+    $price.innerText = total.price;
+    $quantity.innerText = total.quantity;
+  }
+}
+
+function updateBagInfoInHeader() {
+  const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+  const data = calculateTotalPriceAndQuantity(shoppingBag);
+  renderBagInfoInHeader(data);
+}
+
+updateBagInfoInHeader();

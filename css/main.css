@@ -1531,11 +1531,6 @@ li {
     font-size: 40px;
   }
 
-  .arrivals__product-wrapper > .product:nth-child(4) {
-    padding: 0;
-    max-width: 204px;
-  }
-
   .info__upper {
     flex-direction: column;
     margin-bottom: 90px;

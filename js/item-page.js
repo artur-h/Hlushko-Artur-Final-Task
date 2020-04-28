@@ -45,7 +45,7 @@ function updateChosenItem(event) {
     const itemIndexInShoppingBag = shoppingBag.findIndex(function(bagItem) {
       if (bagItem.id === item.id && bagItem.chosenColor === item.chosenColor && bagItem.chosenSize === item.chosenSize) return true;
     })
-    console.log(itemIndexInShoppingBag)
+
     if (itemIndexInShoppingBag !== -1) {
       shoppingBag[itemIndexInShoppingBag].quantity++
     } else {
@@ -54,5 +54,6 @@ function updateChosenItem(event) {
     }
 
     localStorage.setItem('shoppingBag', JSON.stringify(shoppingBag));
+    updateBagInfoInHeader()
   }
 }

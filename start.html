@@ -30,8 +30,8 @@
           </a>
           <a href="shopping-bag.html" class="header__bag-quantity">
             <div class="header__bag--inner">
-              Bag<span class="header__bag-price display-none" id="total-price-header-wrapper">
-              <span class="header__bag-currency">&#163;</span><span id="total-price-header">236.50</span></span>
+              Bag<span class="header__bag-price hide" id="total-price-header-wrapper">
+              <span class="header__bag-currency">&#163;</span><span id="total-price-header"></span></span>
               (<span class="header__bag-amount" id="total-bag-quantity">0</span>)
             </div>
           </a>
@@ -188,56 +188,7 @@
           <h2 class="arrivals__title">
             New arrivals
           </h2>
-          <div class="arrivals__product-wrapper">
-            <div class="product product--new">
-              <a href="#">
-                <div class="product__thumbnail">
-                  <div class="product__overlay"><span class="product__overlay-text">View item</span></div>
-                  <img src="img/products/Only_Skinny_Jeans.png" alt="Product" class="product__img">
-                </div>
-                <div class="product__description">
-                  <h4 class="product__name">Only Skinny Jeans</h4>
-                  <div class="product__price"><span class="product__currency">&#163;</span>65.50</div>
-                </div>
-              </a>
-            </div>
-            <div class="product product--new">
-              <a href="#">
-                <div class="product__thumbnail">
-                  <div class="product__overlay"><span class="product__overlay-text">View item</span></div>
-                  <img src="img/products/Neck_Knitted_Jumper.png" alt="Product" class="product__img">
-                </div>
-                <div class="product__description">
-                  <h4 class="product__name">Neck Knitted Jumper</h4>
-                  <div class="product__price"><span class="product__currency">&#163;</span>76.25</div>
-                </div>
-              </a>
-            </div>
-            <div class="product">
-              <a href="#">
-                <div class="product__thumbnail">
-                  <div class="product__overlay"><span class="product__overlay-text">View item</span></div>
-                  <img src="img/products/Turtle_Neck_Jumper_in_Rib.png" alt="Product" class="product__img">
-                </div>
-                <div class="product__description">
-                  <h4 class="product__name">Turtle Neck Jumper in Rib</h4>
-                  <div class="product__price"><span class="product__currency">&#163;</span>130.25</div>
-                </div>
-              </a>
-            </div>
-            <div class="product">
-              <a href="#">
-                <div class="product__thumbnail">
-                  <div class="product__overlay"><span class="product__overlay-text">View item</span></div>
-                  <img src="img/products/With_Patchwork_Crochet.png" alt="Product" class="product__img">
-                </div>
-                <div class="product__description">
-                  <h4 class="product__name">With Patchwork Crochet</h4>
-                  <div class="product__price"><span class="product__currency">&#163;</span>80.60</div>
-                </div>
-              </a>
-            </div>
-          </div>
+          <div class="arrivals__product-wrapper arrivals__product-container"></div>
           <div class="arrivals__action">
             <a href="catalog.html" class="button">All arrivals</a>
           </div>
@@ -376,7 +327,34 @@
     </div>
   </div>
 
+  <script id="product-template" type="text/template">
+    <div class="<% if(hasNew) { %>product product--new<% } else { %>product<% } %>" data-identifier="<%-id%>">
+      <a href="item.html">
+        <div class="product__thumbnail">
+          <div class="product__overlay"><span class="product__overlay-text">View item</span></div>
+          <img src="<%-thumbnail%>" alt="<%-title%>" class="product__img">
+        </div>
+        <div class="product__description">
+          <h4 class="product__name"><%-title%></h4>
+          <div class="product__price-wrapper">
+            <% if (discountedPrice < price && discountedPrice !== null) { %>
+            <div class="product__price product__price--old"><span class="product__currency">&#163;</span><%-price.toFixed(2)%></div>
+            <div class="product__price"><span class="product__currency">&#163;</span><%-discountedPrice.toFixed(2)%></div>
+            <% } else { %>
+            <div class="product__price"><span class="product__currency">&#163;</span><%-price.toFixed(2)%></div>
+            <% } %>
+          </div>
+        </div>
+      </a>
+    </div>
+  </script>
+
+  <script src="js/lodash.js"></script>
+  <script src="js/utils.js"></script>
   <script src="data/catalog.js"></script>
+  <script src="js/bag.js"></script>
+  <script src="js/catalogItemList.js"></script>
+  <script src="js/start-page.js"></script>
   <script src="js/common.js"></script>
 </body>
 </html>
