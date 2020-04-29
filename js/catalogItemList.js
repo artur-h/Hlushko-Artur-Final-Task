@@ -89,8 +89,8 @@ function addToItemDetailLocalStorage(event) {
     if (catalog[i].id === id) item = catalog[i];
   }
 
-  if (item.sizes.length !== 0) item.chosenSize = item.sizes[0];
-  if (item.colors.length !== 0) item.chosenColor = item.colors[0];
+  item.sizes.length !== 0 ? item.chosenSize = item.sizes[0] : item.chosenSize = null;
+  item.colors.length !== 0 ? item.chosenColor = item.colors[0] : item.chosenColor = null;
 
   localStorage.setItem('itemDetailPage', JSON.stringify(item));
 }

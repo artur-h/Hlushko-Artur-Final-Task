@@ -9,7 +9,6 @@ function createItemDetailPage() {
 
   const info = document.querySelector('[data-container="item-info"]');
   info.addEventListener('click', updateChosenItem);
-
 }
 
 function renderItemInfo(allInfo, type) {
