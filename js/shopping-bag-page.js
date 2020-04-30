@@ -1,18 +1,5 @@
 'use strict';
 
-const hoverIdGenerator = createHoverId();
-
-function* createHoverId() {
-  let id = 0;
-  let iteration = 0;
-  let SAME_NUM_REPETITIONS = 3;
-
-  while (true) {
-    iteration % SAME_NUM_REPETITIONS === 0 ? yield ++id : yield id;
-    iteration++;
-  }
-}
-
 function renderBagItemList() {
   const productTemplate = document.getElementById('bag-item-template').innerHTML;
   const productTemplateFn = _.template(productTemplate);
@@ -58,7 +45,6 @@ function addItemHoverEffect() {
     }
   });
 }
-
 
 addItemHoverEffect();
 renderBagItemList();

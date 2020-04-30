@@ -109,13 +109,13 @@
           <div class="<% if(hasNew) { %>product product--new<% } else { %>product<% } %>">
             <a href="item.html">
               <div class="product__thumbnail">
-                <div class="product__overlay" data-hover="<%-hoverIdGenerator.next().value%>"><span class="product__overlay-text" data-hover="<%-hoverIdGenerator.next().value%>">Edit item</span></div>
+                <div class="product__overlay" data-hover="<%-id%>&<%-chosenSize%>&<%-chosenColor%>"><span class="product__overlay-text" data-hover="<%-id%>&<%-chosenSize%>&<%-chosenColor%>">Edit item</span></div>
                 <img src="<%-thumbnail%>" alt="<%-title%>" class="product__img">
               </div>
             </a>
           </div>
           <div class="bag__info">
-            <h3 class="bag__item-name" data-hover="<%-hoverIdGenerator.next().value%>"><%-title%></h3>
+            <h3 class="bag__item-name" data-hover="<%-id%>&<%-chosenSize%>&<%-chosenColor%>"><%-title%></h3>
             <div class="bag__price">
               <span class="bag__currency">&#163;</span>
               <% if (discountedPrice === null || discountedPrice === price) { %>
