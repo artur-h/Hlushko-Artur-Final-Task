@@ -41,12 +41,12 @@ function updateChosenItem(event) {
     const item = JSON.parse(localStorage.getItem('itemDetailPage'));
 
     const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
-    const itemIndexInShoppingBag = shoppingBag.findIndex(function(bagItem) {
+    const itemInShoppingBag = shoppingBag.filter(function(bagItem) {
       if (bagItem.id === item.id && bagItem.chosenColor === item.chosenColor && bagItem.chosenSize === item.chosenSize) return true;
-    })
+    })[0];
 
-    if (itemIndexInShoppingBag !== -1) {
-      shoppingBag[itemIndexInShoppingBag].quantity++
+    if (itemInShoppingBag !== undefined) {
+      itemInShoppingBag.quantity++
     } else {
       item.quantity = 1;
       shoppingBag.push(item)
