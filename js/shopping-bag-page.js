@@ -46,6 +46,8 @@ function addItemHoverEffect() {
   });
 }
 
+document.addEventListener('click', addToItemDetailLocalStorage);
+
 addItemHoverEffect();
 renderBagItemList();
 
@@ -194,45 +196,5 @@ if (displayedBag != undefined) {
 
       bag = {};
     }
-  });
-}
-
-let addToBagBtn = document.getElementById('add-to-bag-btn');
-if (addToBagBtn != undefined) {
-  addToBagBtn.addEventListener('click', function(e) {
-    let target = e.target;
-    let identifier = target.dataset.identifier;
-
-    if (bag[identifier] === undefined) {
-      bag[identifier] = 1;
-    } else {
-      bag[identifier]++;
-    }
-
-    let totalPrice = 0;
-    let totalQuantity = 0;
-
-    for (let key in bag) {
-      let item;
-
-      for (let i = 0; i < catalog.length; i++) {
-        if (key === catalog[i].id) item = catalog[i];
-      }
-
-      let totalItemCost = item.discountedPrice * bag[key];
-      totalPrice += totalItemCost;
-
-      totalQuantity += bag[key];
-    }
-
-    totalPrice -= discount;
-    totalPrice = totalPrice.toFixed(2);
-
-    let totalHeaderPrice = document.getElementById('total-price-header');
-    let totalPriceHeaderWrapper = document.getElementById('total-price-header-wrapper');
-    let totalBagQuantity = document.getElementById('total-bag-quantity');
-
-    totalBagQuantity.textContent = totalQuantity.toString();
-    totalHeaderPrice.textContent = '' + totalPrice;
   });
 }

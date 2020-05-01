@@ -123,11 +123,11 @@ function updateBagInfoInHeader() {
 }
 
 function addToItemDetailLocalStorage(event) {
-  const itemIdentifier = getClosest(event.target, '[data-identifier]');
+  const $item = getClosest(event.target, '[data-identifier]');
 
-  if (!itemIdentifier) return;
+  if (!$item && $item.className.indexOf('product__') === 0) return;
 
-  const id = itemIdentifier.dataset.identifier
+  const id = $item.dataset.identifier
   let item;
 
   for (let i = 0; i < catalog.length; i++) {
