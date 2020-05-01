@@ -77,22 +77,7 @@ function createCatalogItemList() {
   }
 }
 
-function addToItemDetailLocalStorage(event) {
-  const itemIdentifier = getClosest(event.target, '[data-identifier]');
-
-  if (!itemIdentifier) return;
-
-  const id = itemIdentifier.dataset.identifier
-  let item;
-
-  for (let i = 0; i < catalog.length; i++) {
-    if (catalog[i].id === id) item = catalog[i];
-  }
-
-  item.sizes.length !== 0 ? item.chosenSize = item.sizes[0] : item.chosenSize = null;
-  item.colors.length !== 0 ? item.chosenColor = item.colors[0] : item.chosenColor = null;
-
-  localStorage.setItem('itemDetailPage', JSON.stringify(item));
-}
-
 document.addEventListener('click', addToItemDetailLocalStorage);
+
+const catalogItemList = createCatalogItemList();
+catalogItemList.initialize();

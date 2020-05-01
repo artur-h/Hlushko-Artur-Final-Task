@@ -30,7 +30,7 @@
           </a>
           <a href="shopping-bag.html" class="header__bag-quantity">
             <div class="header__bag--inner">
-              Bag<span class="header__bag-price hide" id="total-price-header-wrapper">
+              Bag<span class="header__bag-price display-none" id="total-price-header-wrapper">
               <span class="header__bag-currency">&#163;</span><span id="total-price-header"></span></span>
               (<span class="header__bag-amount" id="total-bag-quantity">0</span>)
             </div>
@@ -169,7 +169,7 @@
               <button class="button button--checkout">Checkout</button>
             </div>
             <div class="bag__total-price-wrapper">
-              <div class="bag__discount">
+              <div class="bag__discount display-none">
                 Applied discount: <span class="bag__discount-currency">&#163;</span><span class="bag__discount-price">15.00</span>
               </div>
               <div class="bag__total">
@@ -322,10 +322,9 @@
     </div>
   </div>
 
-  <script src="js/lodash.js"></script>
   <script src="data/catalog.js"></script>
-  <script src="js/bag.js"></script>
-  <script src="js/shopping-bag-page.js"></script>
+  <script src="js/lodash.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/shopping-bag-page.js"></script>
 </body>
 </html>

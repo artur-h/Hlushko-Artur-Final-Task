@@ -1,8 +1,5 @@
 'use strict';
 
-const catalogItemList = createCatalogItemList();
-catalogItemList.initialize();
-
 let selectedFilterElements = {
   'fashion': [],
   'productType': [],
