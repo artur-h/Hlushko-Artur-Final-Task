@@ -1,14 +1,24 @@
 'use strict';
 
+const emptyBagTextHtml = 'Your shopping bag is empty. Use <a href="catalog.html" class="bag__back-to-catalog">Catalog</a> to add new items';
+
 function renderBagItemList() {
-  const productTemplate = document.getElementById('bag-item-template').innerHTML;
-  const productTemplateFn = _.template(productTemplate);
-  const productContainer = document.getElementById('bag-inner');
-  const items = JSON.parse(localStorage.getItem('shoppingBag'));
+  const bag = getBagItems();
+  const calcData = calculateTotalPriceAndQuantity(bag);
+  renderMainBagInfo(calcData);
 
-  if (productContainer.innerHTML !== '') productContainer.innerHTML = '';
+  const productTemplate = document.getElementById('bag-item-template').innerHTML,
+    productTemplateFn = _.template(productTemplate),
+    productContainer = document.getElementById('bag-inner'),
+    checkoutSection = document.getElementById('checkout-section'),
+    emtyBagTextBlock = document.querySelector('.bag__empty-text');
 
-  productContainer.innerHTML = items.map(function(item) { return productTemplateFn(item) }).join('');
+  if (bag.length === 0) {
+    emtyBagTextBlock.innerHTML = emptyBagTextHtml
+  } else {
+    checkoutSection.className = 'bag-promo';
+    productContainer.innerHTML = bag.map(function(item) { return productTemplateFn(item) }).join('');
+  }
 }
 
 function addItemHoverEffect() {
@@ -47,7 +57,7 @@ function addItemHoverEffect() {
 }
 
 function getBagItems() {
-  return JSON.parse(localStorage.getItem('shoppingBag'));
+  return JSON.parse(localStorage.getItem('shoppingBag') || '[]');
 }
 
 function setBagItems(elem) {
@@ -62,18 +72,40 @@ function isSameItem(obj, elem) {
   }
 }
 
+function renderMainBagInfo(total) {
+  const checkoutSection = document.getElementById('checkout-section'),
+    priceInfo = document.getElementById('total-price-checkout'),
+    bagInner = document.getElementById('bag-inner');
+
+  if (total === null) {
+    const emptyText = document.createElement('div');
+
+    emptyText.className = 'bag__empty-text';
+    emptyText.innerHTML = emptyBagTextHtml;
+    bagInner.textContent = '';
+    bagInner.append(emptyText);
+    
+    checkoutSection.className = 'bag-promo display-none';
+    priceInfo.textContent = '0';
+  } else {
+    priceInfo.textContent = total.price
+  }
+}
+
 document.addEventListener('click', function(event) {
   const target = event.target;
   const identifier = target.dataset.identifier;
 
   if (getClosest(target, '[data-quantity=increase]')) {
     const increaseBtn = getClosest(target, '[data-quantity=increase]');
-    const shoppingBag = getBagItems();
+    const bag = getBagItems();
     
-    shoppingBag.forEach(function(item) {if (isSameItem(item, increaseBtn)) item.quantity++});
-  
-    setBagItems(shoppingBag);
-    updateBagInfoInHeader();
+    bag.forEach(function(item) {if (isSameItem(item, increaseBtn)) item.quantity++});
+    setBagItems(bag);
+    
+    const calcData = calculateTotalPriceAndQuantity(bag);
+    renderBagInfoInHeader(calcData);
+    renderMainBagInfo(calcData);
   }
 
   if (target.className.indexOf('product__') === 0) addToItemDetailLocalStorage(event);

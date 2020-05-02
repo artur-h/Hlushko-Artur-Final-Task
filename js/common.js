@@ -106,9 +106,9 @@ function renderBagInfoInHeader(total) {
   const $quantity = document.getElementById('total-bag-quantity');
 
   if (total === null) {
-    $priceWrapper.className = 'header__bag-price display-none';
     $price.innerText = '0';
     $quantity.innerText = '0';
+    $priceWrapper.className = 'header__bag-price display-none';
   } else {
     $priceWrapper.className = 'header__bag-price';
     $price.innerText = total.price;
@@ -128,7 +128,7 @@ function addToItemDetailLocalStorage(event) {
   if (!$item) return;
 
   const id = $item.dataset.identifier
-  const item = catalog.filter(function(elem) {elem.id === id})[0];
+  const item = catalog.filter(function(elem) {return elem.id === id})[0];
 
   item.sizes.length !== 0 ? item.chosenSize = item.sizes[0] : item.chosenSize = null;
   item.colors.length !== 0 ? item.chosenColor = item.colors[0] : item.chosenColor = null;
