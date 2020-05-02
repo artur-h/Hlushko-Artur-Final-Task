@@ -125,14 +125,10 @@ function updateBagInfoInHeader() {
 function addToItemDetailLocalStorage(event) {
   const $item = getClosest(event.target, '[data-identifier]');
 
-  if (!$item && $item.className.indexOf('product__') === 0) return;
+  if (!$item) return;
 
   const id = $item.dataset.identifier
-  let item;
-
-  for (let i = 0; i < catalog.length; i++) {
-    if (catalog[i].id === id) item = catalog[i];
-  }
+  const item = catalog.filter(function(elem) {elem.id === id})[0];
 
   item.sizes.length !== 0 ? item.chosenSize = item.sizes[0] : item.chosenSize = null;
   item.colors.length !== 0 ? item.chosenColor = item.colors[0] : item.chosenColor = null;

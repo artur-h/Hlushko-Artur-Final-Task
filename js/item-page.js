@@ -29,17 +29,15 @@ createItemDetailPage();
 
 function updateChosenItem(event) {
   const target = event.target;
+  const item = JSON.parse(localStorage.getItem('itemDetailPage'));
 
   if (target.hasAttribute('data-chosen')) {
-    const item = JSON.parse(localStorage.getItem('itemDetailPage'));
     const prop = 'chosen' + target.dataset.chosen;
     item[prop] = target.value;
     localStorage.setItem('itemDetailPage', JSON.stringify(item));
   }
 
   if (target.id === 'addToBag') {
-    const item = JSON.parse(localStorage.getItem('itemDetailPage'));
-
     const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
     const itemInShoppingBag = shoppingBag.filter(function(bagItem) {
       if (bagItem.id === item.id && bagItem.chosenColor === item.chosenColor && bagItem.chosenSize === item.chosenSize) return true;
