@@ -64,11 +64,20 @@ function setBagItems(elem) {
   localStorage.setItem('shoppingBag', JSON.stringify(elem));
 }
 
-function isSameItem(obj, elem) {
-  if (obj.id === elem.dataset.identifier 
-    && String(obj.chosenColor) === elem.dataset.chosencolor 
-    && String(obj.chosenSize) === elem.dataset.chosensize) {
-    return true
+// isSameItem func can be used in conditionals to compare certain item object props with DOM Element's dataset attributes.
+function isSameItem(elemA, elemB, compareType) {
+  if (compareType === 'obj-elem') {
+    if (elemA.id === elemB.dataset.identifier 
+      && String(elemA.chosenColor) === elemB.dataset.chosencolor 
+      && String(elemA.chosenSize) === elemB.dataset.chosensize) {
+      return true;
+    }
+  } else if (compareType === 'elem-elem') {
+    if (elemA.dataset.identifier  === elemB.dataset.identifier 
+      && elemA.dataset.chosencolor === elemB.dataset.chosencolor 
+      && elemA.dataset.chosensize === elemB.dataset.chosensize) {
+      return true;
+    }
   }
 }
 
@@ -94,13 +103,19 @@ function renderMainBagInfo(total) {
 
 document.addEventListener('click', function(event) {
   const target = event.target;
-  const identifier = target.dataset.identifier;
 
   if (getClosest(target, '[data-quantity=increase]')) {
-    const increaseBtn = getClosest(target, '[data-quantity=increase]');
-    const bag = getBagItems();
+    const increaseBtn = getClosest(target, '[data-quantity=increase]'),
+      quantityIndicators = document.querySelectorAll('.bag__quantity'),
+      bag = getBagItems();
     
-    bag.forEach(function(item) {if (isSameItem(item, increaseBtn)) item.quantity++});
+    bag.forEach(function(item) {if (isSameItem(item, increaseBtn, 'obj-elem')) item.quantity++});
+    quantityIndicators.forEach(function(elem) {
+      if (isSameItem(elem, increaseBtn, 'elem-elem')) {
+        let quantity = Number(elem.textContent);
+        elem.textContent = ++quantity;
+      }
+    });
     setBagItems(bag);
     
     const calcData = calculateTotalPriceAndQuantity(bag);
