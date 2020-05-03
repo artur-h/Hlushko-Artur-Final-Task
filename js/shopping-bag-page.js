@@ -92,7 +92,7 @@ function renderMainBagInfo(total) {
     emptyText.className = 'bag__empty-text';
     emptyText.innerHTML = emptyBagTextHtml;
     bagInner.textContent = '';
-    bagInner.append(emptyText);
+    bagInner.appendChild(emptyText);
     
     checkoutSection.className = 'bag-promo display-none';
     priceInfo.textContent = '0';
@@ -110,13 +110,14 @@ document.addEventListener('click', function(event) {
       bag = getBagItems();
     
     bag.forEach(function(item) {if (isSameItem(item, increaseBtn, 'obj-elem')) item.quantity++});
-    quantityIndicators.forEach(function(elem) {
-      if (isSameItem(elem, increaseBtn, 'elem-elem')) {
-        let quantity = Number(elem.textContent);
-        elem.textContent = ++quantity;
-      }
-    });
     setBagItems(bag);
+
+    for (let i = 0; i < quantityIndicators.length; i++) {
+      if (isSameItem(quantityIndicators[i], increaseBtn, 'elem-elem')) {
+        let quantity = Number(quantityIndicators[i].textContent);
+        quantityIndicators[i].textContent = ++quantity;
+      }
+    }
     
     const calcData = calculateTotalPriceAndQuantity(bag);
     renderBagInfoInHeader(calcData);
