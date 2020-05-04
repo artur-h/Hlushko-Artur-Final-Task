@@ -13,6 +13,8 @@ function renderBagItemList() {
     checkoutSection = document.getElementById('checkout-section'),
     emtyBagTextBlock = document.querySelector('.bag__empty-text');
 
+  if (productContainer.textContent !== '') productContainer.textContent = '';
+
   if (bag.length === 0) {
     emtyBagTextBlock.innerHTML = emptyBagTextHtml
   } else {
@@ -101,21 +103,31 @@ function renderMainBagInfo(total) {
   }
 }
 
-document.addEventListener('click', function(event) {
-  const target = event.target;
-
-  if (getClosest(target, '[data-quantity=increase]')) {
-    const increaseBtn = getClosest(target, '[data-quantity=increase]'),
-      quantityIndicators = document.querySelectorAll('.bag__quantity'),
-      bag = getBagItems();
+function renderItemQuantity(clickedElem, change) {
+  if (getClosest(clickedElem, '[data-quantity=' + change + ']')) {
+    const btn = getClosest(clickedElem, '[data-quantity=' + change + ']');
+    const quantityIndicators = document.querySelectorAll('.bag__quantity');
+    let bag = getBagItems();
     
-    bag.forEach(function(item) {if (isSameItem(item, increaseBtn, 'obj-elem')) item.quantity++});
+    bag.forEach(function(item) {
+      if (isSameItem(item, btn, 'obj-elem')) {
+        change === 'increase' ? item.quantity++ : item.quantity--;
+      }
+    });
+
+    const lengthBefore = bag.length;
+
+    bag = bag.filter(function(item) {return item.quantity > 0;});
     setBagItems(bag);
 
+    const lenghtAfter = bag.length;
+
+    if (lengthBefore > lenghtAfter) renderBagItemList();
+    
     for (let i = 0; i < quantityIndicators.length; i++) {
-      if (isSameItem(quantityIndicators[i], increaseBtn, 'elem-elem')) {
+      if (isSameItem(quantityIndicators[i], btn, 'elem-elem')) {
         let quantity = Number(quantityIndicators[i].textContent);
-        quantityIndicators[i].textContent = ++quantity;
+        change === 'increase' ? quantityIndicators[i].textContent = ++quantity : quantityIndicators[i].textContent = --quantity;
       }
     }
     
@@ -123,6 +135,13 @@ document.addEventListener('click', function(event) {
     renderBagInfoInHeader(calcData);
     renderMainBagInfo(calcData);
   }
+}
+
+document.addEventListener('click', function(event) {
+  const target = event.target;
+
+  renderItemQuantity(target, 'increase');
+  renderItemQuantity(target, 'decrease');
 
   if (target.className.indexOf('product__') === 0) addToItemDetailLocalStorage(event);
 });
