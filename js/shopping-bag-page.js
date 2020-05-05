@@ -107,37 +107,34 @@ function renderMainBagInfo(total) {
 }
 
 function renderItemQuantity(clickedElem, change) {
-  if (getClosest(clickedElem, '[data-quantity=' + change + ']')) {
-    const btn = getClosest(clickedElem, '[data-quantity=' + change + ']');
-    const quantityIndicators = document.querySelectorAll('.bag__quantity');
-    let bag = getBagItems();
-    
-    bag.forEach(function(item) {
-      if (isSameItem(item, btn, 'obj-elem')) {
-        change === 'increase' ? item.quantity++ : item.quantity--;
-      }
-    });
-
-    const lengthBefore = bag.length;
-
-    bag = bag.filter(function(item) {return item.quantity > 0;});
-    setBagItems(bag);
-
-    const lenghtAfter = bag.length;
-
-    if (lengthBefore > lenghtAfter) renderBagItemList(false);
-    
-    for (let i = 0; i < quantityIndicators.length; i++) {
-      if (isSameItem(quantityIndicators[i], btn, 'elem-elem')) {
-        let quantity = Number(quantityIndicators[i].textContent);
-        change === 'increase' ? quantityIndicators[i].textContent = ++quantity : quantityIndicators[i].textContent = --quantity;
-      }
+  const quantityIndicators = document.querySelectorAll('.bag__quantity');
+  let bag = getBagItems();
+  
+  bag.forEach(function(item) {
+    if (isSameItem(item, clickedElem, 'obj-elem')) {
+      change === 'increase' ? item.quantity++ : item.quantity--;
     }
-    
-    const calcData = calculateTotalPriceAndQuantity(bag);
-    renderBagInfoInHeader(calcData);
-    renderMainBagInfo(calcData);
+  });
+
+  const lengthBefore = bag.length;
+
+  bag = bag.filter(function(item) {return item.quantity > 0;});
+  setBagItems(bag);
+
+  const lenghtAfter = bag.length;
+
+  if (lengthBefore > lenghtAfter) renderBagItemList(false);
+  
+  for (let i = 0; i < quantityIndicators.length; i++) {
+    if (isSameItem(quantityIndicators[i], clickedElem, 'elem-elem')) {
+      let quantity = Number(quantityIndicators[i].textContent);
+      change === 'increase' ? quantityIndicators[i].textContent = ++quantity : quantityIndicators[i].textContent = --quantity;
+    }
   }
+  
+  const calcData = calculateTotalPriceAndQuantity(bag);
+  renderBagInfoInHeader(calcData);
+  renderMainBagInfo(calcData);
 }
 
 document.addEventListener('click', function(event) {
@@ -145,6 +142,11 @@ document.addEventListener('click', function(event) {
 
   renderItemQuantity(target, 'increase');
   renderItemQuantity(target, 'decrease');
+
+  if (getClosest(target, '[data-quantity]')) {
+    const elem = getClosest(target, '[data-quantity]');
+    renderItemQuantity(elem, elem.dataset.quantity)
+  }
 
   if (target.dataset.action === 'removeItem') {
     const bag = getBagItems();
