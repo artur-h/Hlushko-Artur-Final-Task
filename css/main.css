@@ -205,6 +205,7 @@ li {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   transition: .3s all ease;
+  outline: none;
 }
 
 .button:hover {
