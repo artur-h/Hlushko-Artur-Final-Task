@@ -13,11 +13,11 @@ function renderBagItemList() {
     checkoutSection = document.getElementById('checkout-section'),
     emtyBagTextBlock = document.querySelector('.bag__empty-text');
 
-  if (productContainer.textContent !== '') productContainer.textContent = '';
-
   if (bag.length === 0) {
     emtyBagTextBlock.innerHTML = emptyBagTextHtml
   } else {
+    if (productContainer.textContent !== '') productContainer.textContent = '';
+
     checkoutSection.className = 'bag-promo';
     productContainer.innerHTML = bag.map(function(item) { return productTemplateFn(item) }).join('');
   }
