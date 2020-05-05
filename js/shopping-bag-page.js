@@ -6,6 +6,7 @@ function renderBagItemList() {
   const bag = getBagItems();
   const calcData = calculateTotalPriceAndQuantity(bag);
   renderMainBagInfo(calcData);
+  renderBagInfoInHeader(calcData);
 
   const productTemplate = document.getElementById('bag-item-template').innerHTML,
     productTemplateFn = _.template(productTemplate),
@@ -142,6 +143,17 @@ document.addEventListener('click', function(event) {
 
   renderItemQuantity(target, 'increase');
   renderItemQuantity(target, 'decrease');
+
+  if (target.dataset.action === 'removeItem') {
+    const bag = getBagItems();
+    
+    const withoutRemovedItem = bag.filter(function(item) {
+      return isSameItem(item, target, 'obj-elem') ? false : true;
+    })
+
+    setBagItems(withoutRemovedItem);
+    renderBagItemList();
+  }
 
   if (target.className.indexOf('product__') === 0) addToItemDetailLocalStorage(event);
 });

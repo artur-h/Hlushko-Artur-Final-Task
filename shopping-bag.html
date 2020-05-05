@@ -185,7 +185,8 @@
               </div>
             </div>
             <button 
-            class="bag__remove-item-btn" 
+            class="bag__remove-item-btn"
+            data-action="removeItem" 
             data-chosenColor="<% if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>" 
             data-chosenSize="<% if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>" 
             data-identifier="<%-id%>">Remove item</button>
