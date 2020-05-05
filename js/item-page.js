@@ -1,40 +1,56 @@
 'use strict';
 
-let selectedItemInfo = {
-  'size': [],
-  'color': [],
-};
+function createItemDetailPage() {
+  const item = JSON.parse(localStorage.getItem('itemDetailPage'));
+  const itemTemplate = document.getElementById('item-template').innerHTML;
+  const itemTemplateFn = _.template(itemTemplate);
+  const itemContainer = document.getElementById('item-container');
+  itemContainer.innerHTML = itemTemplateFn(item);
 
-let selectedInfoElements = document.querySelectorAll('.item__detailed-info.item__detailed-info--selected');
-
-for (let i = 0; i < selectedInfoElements.length; i++) {
-  for (let key in selectedItemInfo) {
-    selectedItemInfo[key].push(selectedInfoElements[i]);
-    i++;
-  }
+  const info = document.querySelector('[data-container="item-info"]');
+  info.addEventListener('click', updateChosenItem);
 }
 
-let itemInfo = document.getElementById('item-info');
-itemInfo.addEventListener('click', function(e) {
-  let target = e.target;
+function renderItemInfo(allInfo, type) {
+  return allInfo.map(function(info, index) {
+    let input;
 
-  if (target.className === 'item__detailed-info') {
-    target.className = 'item__detailed-info item__detailed-info--selected';
+    index !== 0
+      ? input = '<input data-chosen="' + type + '" type="radio" id="radio' + info + '" name="radio' + type + '" value="' + info + '" class="item__input">'
+      : input = '<input checked data-chosen="'+ type + '" type="radio" id="radio' + info + '" name="radio' + type + '" value="' + info + '" class="item__input">';
 
-    let data = target.dataset.info;
-    let el = document.querySelectorAll('*');
-    let elems = [];
+    const label = '<label for="radio' + info + '" class="item__detailed-info"> <span class="item__detailed-text">' + info + '</span> </label>';
 
-    for (let key in selectedItemInfo) {
-      if (key === data) {
-        selectedItemInfo[key].push(target);
+    return input + label;
+  }).join('');
+}
 
-        if (selectedItemInfo[key].length === 2) {
-          selectedItemInfo[key][0].className = 'item__detailed-info';
-          selectedItemInfo[key][1].className = 'item__detailed-info item__detailed-info--selected';
-          selectedItemInfo[key].shift();
-        }
-      }
-    }
+createItemDetailPage();
+
+function updateChosenItem(event) {
+  const target = event.target;
+  const item = JSON.parse(localStorage.getItem('itemDetailPage'));
+
+  if (target.hasAttribute('data-chosen')) {
+    const prop = 'chosen' + target.dataset.chosen;
+    item[prop] = target.value;
+    localStorage.setItem('itemDetailPage', JSON.stringify(item));
   }
-});
+
+  if (target.id === 'addToBag') {
+    const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+    const itemInShoppingBag = shoppingBag.filter(function(bagItem) {
+      if (bagItem.id === item.id && bagItem.chosenColor === item.chosenColor && bagItem.chosenSize === item.chosenSize) return true;
+    })[0];
+
+    if (itemInShoppingBag !== undefined) {
+      itemInShoppingBag.quantity++
+    } else {
+      item.quantity = 1;
+      shoppingBag.push(item)
+    }
+
+    localStorage.setItem('shoppingBag', JSON.stringify(shoppingBag));
+    updateBagInfoInHeader()
+  }
+}

@@ -1,5 +1,19 @@
 'use strict';
 
+function getClosest(elem, selector) {
+  if (elem.msMatchesSelector) {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if ( elem.msMatchesSelector( selector ) ) return elem;
+    }
+  } else {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if ( elem.matches( selector ) ) return elem;
+    }
+  }
+
+  return null;
+}
+
 function toggleInput() {
   let searchInput = document.getElementById('search-input');
 
@@ -59,3 +73,67 @@ function closeMobileMenu() {
 
   input.value = '';
 }
+
+function calculateTotalPriceAndQuantity(bag) {
+  if (bag.length === 0) {
+    return null;
+  } else {
+
+    let totalPrice = 0;
+    for (let i = 0; i < bag.length; i++) {
+      if (bag[i].discountedPrice === null || bag[i].discountedPrice === bag[i].price) {
+        totalPrice += bag[i].price * bag[i].quantity;
+      } else {
+        totalPrice += bag[i].discountedPrice * bag[i].quantity;
+      }
+    }
+
+    let totalQuantity = 0;
+    for (let i = 0; i < bag.length; i++) {
+      totalQuantity += bag[i].quantity;
+    }
+
+    return {
+      price: totalPrice.toFixed(2),
+      quantity: totalQuantity
+    };
+  }
+}
+
+function renderBagInfoInHeader(total) {
+  const $priceWrapper = document.getElementById('total-price-header-wrapper');
+  const $price = document.getElementById('total-price-header');
+  const $quantity = document.getElementById('total-bag-quantity');
+
+  if (total === null) {
+    $price.innerText = '0';
+    $quantity.innerText = '0';
+    $priceWrapper.className = 'header__bag-price display-none';
+  } else {
+    $priceWrapper.className = 'header__bag-price';
+    $price.innerText = total.price;
+    $quantity.innerText = total.quantity;
+  }
+}
+
+function updateBagInfoInHeader() {
+  const shoppingBag = JSON.parse(localStorage.getItem('shoppingBag') || '[]');
+  const data = calculateTotalPriceAndQuantity(shoppingBag);
+  renderBagInfoInHeader(data);
+}
+
+function addToItemDetailLocalStorage(event) {
+  const $item = getClosest(event.target, '[data-identifier]');
+
+  if (!$item) return;
+
+  const id = $item.dataset.identifier
+  const item = catalog.filter(function(elem) {return elem.id === id})[0];
+
+  item.sizes.length !== 0 ? item.chosenSize = item.sizes[0] : item.chosenSize = null;
+  item.colors.length !== 0 ? item.chosenColor = item.colors[0] : item.chosenColor = null;
+
+  localStorage.setItem('itemDetailPage', JSON.stringify(item));
+}
+
+updateBagInfoInHeader();

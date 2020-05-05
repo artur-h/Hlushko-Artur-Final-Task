@@ -15,24 +15,24 @@
     <div class="container">
       <div class="header__inner">
         <a href="start.html" class="header__logo">
-          <span class="header__logo-inner">
-            <span>Template</span>
-          </span>
+            <span class="header__logo-inner">
+              <span>Template</span>
+            </span>
         </a>
         <div class="header__wrapper">
           <a href="start.html" class="header__sign-up">
-            <span class="header__sign-up-inner">
-              E-mail sign up
-            </span>
+              <span class="header__sign-up-inner">
+                E-mail sign up
+              </span>
           </a>
           <a href="#" class="header__bag-icon">
             <img class="header__bag-icon-img" src="img/icons/bag-icon.png" alt="Shopping bag">
           </a>
           <a href="shopping-bag.html" class="header__bag-quantity">
             <div class="header__bag--inner">
-              Bag<span class="header__bag-price" id="total-price-header-wrapper">
-              <span class="header__bag-currency">&#163;</span><span id="total-price-header">236.50</span></span>
-              (<span class="header__bag-amount" id="total-bag-quantity">4</span>)
+              Bag<span class="header__bag-price display-none" id="total-price-header-wrapper">
+                <span class="header__bag-currency">&#163;</span><span id="total-price-header"></span></span>
+              (<span class="header__bag-amount" id="total-bag-quantity">0</span>)
             </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
@@ -100,63 +100,63 @@
     </div>
   </div>
 
-  <section class="item">
+  <section class="item" id="item-container"></section>
+
+  <script id="item-template" type="text/template">
     <div class="container">
       <div class="item__inner">
         <div class="item__preview">
           <div class="item__preview-wrapper">
-            <div class="item__preview-full">
-              <img src="img/item/Dark_classic_fit_suit/full.png" alt="Full item preview" class="item__preview-full-img">
-            </div>
+            <div style='background-image: url("<%-thumbnail%>")' class="item__preview-full"></div>
             <div class="item__thumb-wrapper">
-              <div class="item__thumb-inner-wrapper">
+              <div style='background-image: url("<%-preview[0]%>")' class="item__thumb-inner-wrapper">
                 <div class="item__overlay"></div>
-                <img src="img/item/Dark_classic_fit_suit/thumb_0.png" alt="Small item preview" class="item__thumb-img">
               </div>
-              <div class="item__thumb-inner-wrapper">
-                <img src="img/item/Dark_classic_fit_suit/thumb_2.png" alt="Small item preview" class="item__thumb-img">
-              </div>
-              <div class="item__thumb-inner-wrapper">
-                <img src="img/item/Dark_classic_fit_suit/thumb_1.png" alt="Small item preview" class="item__thumb-img">
-              </div>
+              <div style='background-image: url("<%-preview[1]%>")' class="item__thumb-inner-wrapper"></div>
+              <div style='background-image: url("<%-preview[2]%>")' class="item__thumb-inner-wrapper"></div>
             </div>
           </div>
         </div>
-        <div class="item__info" id="item-info">
+        <div class="item__info" data-container="item-info">
           <div class="item__text">
             <h3 class="item__name">
-              Dark classic fit suit
+              <%-title%>
             </h3>
             <p class="item__description">
-              Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs
-              and a subtle stripe pattern throughout.
+              <%-description%>
             </p>
             <div class="item__price">
-              <span class="item__currency">&#163;</span>180.60
+              <span class="item__currency">&#163;</span>
+              <% if (discountedPrice === null || discountedPrice === price) { %>
+              <%-price.toFixed(2)%>
+              <% } else if (discountedPrice < price) { %>
+              <%-discountedPrice.toFixed(2)%>
+              <% } %>
             </div>
           </div>
+          <% if (sizes.length !== 0) { %>
           <div class="item__size-wrapper">
             <span class="item__size-description">Size:</span>
             <ul class="item__size-inner">
-              <li class="item__detailed-info item__detailed-info--selected" data-info="size">UK 52</li>
-              <li class="item__detailed-info" data-info="size">UK 54</li>
-              <li class="item__detailed-info" data-info="size">UK 56</li>
+              <%=renderItemInfo(sizes, 'Size')%>
             </ul>
           </div>
+          <% } %>
+          <% if (colors.length !== 0) { %>
           <div class="item__color-wrapper">
             <span class="item__color-description">Color:</span>
             <ul class="item__color-inner">
-              <li class="item__detailed-info" data-info="color">Black</li>
-              <li class="item__detailed-info item__detailed-info--selected" data-info="color">Blue</li>
+              <%=renderItemInfo(colors, 'Color')%>
             </ul>
           </div>
+          <% } %>
           <div class="item__button-wrapper">
-            <button class="button button--add-to-bag" data-identifier="80d32566-d81c-4ba0-9edf-0eceda3b4360" id="add-to-bag-btn">Add to bag</button>
+            <button class="button button--add-to-bag" data-identifier="<%-id%>" id="addToBag">Add to bag</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </script>
 
   <section class="promo">
     <div class="lines">
@@ -167,7 +167,7 @@
     <div class="container--wider">
       <section class="promo__inner">
         <div class="promo__wrapper">
-          <a href="item.html">
+          <a href="#">
             <img class="promo__img" src="img/promo/Adidas_Blue.png" alt="Adidas Blue">
             <div class="promo__text promo__text--corner-position">
               <h3 class="promo__product-name promo__product-name--first">Adidas Blue</h3>
@@ -176,7 +176,7 @@
           </a>
         </div>
         <div class="promo__wrapper">
-          <a href="item.html">
+          <a href="#">
             <img class="promo__img" src="img/promo/Repair_Patches.png" alt="Repair Patches">
             <div class="promo__text promo__text--center-position">
               <h3 class="promo__product-name promo__product-name--second">Repair Patches</h3>
@@ -185,7 +185,7 @@
           </a>
         </div>
         <div class="promo__wrapper">
-          <a href="item.html">
+          <a href="#">
             <img class="promo__img" src="img/promo/Sale.png" alt="Sale">
             <div class="promo__text promo__text--center-position">
               <h3 class="promo__product-name promo__product-name--sale">Sale</h3>
@@ -328,8 +328,8 @@
   </div>
 
   <script src="data/catalog.js"></script>
-  <script src="js/bag.js"></script>
-  <script src="js/item-page.js"></script>
+  <script src="js/lodash.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/item-page.js"></script>
 </body>
 </html>

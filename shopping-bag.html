@@ -30,9 +30,9 @@
           </a>
           <a href="shopping-bag.html" class="header__bag-quantity">
             <div class="header__bag--inner">
-              Bag<span class="header__bag-price" id="total-price-header-wrapper">
-              <span class="header__bag-currency">&#163;</span><span id="total-price-header">236.50</span></span>
-              (<span class="header__bag-amount" id="total-bag-quantity">4</span>)
+              Bag<span class="header__bag-price display-none" id="total-price-header-wrapper">
+              <span class="header__bag-currency">&#163;</span><span id="total-price-header"></span></span>
+              (<span class="header__bag-amount" id="total-bag-quantity">0</span>)
             </div>
           </a>
           <img src="img/icons/burger.png" alt="Open menu" class="header__burger" onclick="toggleMenu(this)" id="burger-icon">
@@ -102,115 +102,100 @@
 
   <section class="bag" id="displayed-bag">
     <div class="container">
-      <div class="bag__inner" id="bag-inner">
-        <div class="bag__item" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">
-          <div class="product product--new">
+      <div class="bag__inner" id="bag-inner"></div>
+
+      <script id="bag-item-template" type="text/template">
+        <div class="bag__item" data-identifier="<%-id%>">
+          <div class="<% if(hasNew) { %>product product--new<% } else { %>product<% } %>">
             <a href="item.html">
               <div class="product__thumbnail">
-                <div class="product__overlay" data-hover="1"><span class="product__overlay-text" data-hover="1">Edit item</span></div>
-                <img src="img/products/Only_Skinny_Jeans.png" alt="Product" class="product__img">
+                <div 
+                  class="product__overlay" 
+                  data-hover="<%-id%>&<% 
+                  if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>&<% 
+                  if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>">
+                  <span 
+                  class="product__overlay-text" 
+                  data-hover="<%-id%>&<% 
+                  if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>&<% 
+                  if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>">Edit item</span>
+                </div>
+                <img src="<%-thumbnail%>" alt="<%-title%>" class="product__img">
               </div>
             </a>
           </div>
           <div class="bag__info">
-            <h3 class="bag__item-name" data-hover="1">Only Skinny Jeans</h3>
-            <div class="bag__price"><span class="bag__currency">&#163;</span>65.50</div>
+            <h3 
+              class="bag__item-name" 
+              data-hover="<%-id%>&<%-chosenSize%>&<%-chosenColor%>">
+              <%-title%>
+            </h3>
+            <div class="bag__price">
+              <span class="bag__currency">&#163;</span>
+              <% if (discountedPrice === null || discountedPrice === price) { %>
+              <%-price.toFixed(2)%>
+              <% } else if (discountedPrice < price) { %>
+              <%-discountedPrice.toFixed(2)%>
+              <% } %>
+            </div>
             <div class="bag__description">
-              <div class="bag__heading-color">Color: <span class="bag__color">Phillipa wash</span></div>
-              <div class="bag__heading-size">Size: <span class="bag__size">UK 17</span></div>
+              <% if (chosenColor) { %>
+              <div class="bag__heading-color">Color: <span class="bag__color"><%-chosenColor%></span></div>
+              <% } else { %>
+              <%-''%>
+              <% } %>
+
+              <% if (chosenSize) { %>
+              <div class="bag__heading-size">Size: <span class="bag__size"><%-chosenSize%></span></div>
+              <% } else { %>
+              <%-''%>
+              <% } %>
               <div class="bag__heading-quantity">Quantity:
                 <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"></button>
-                  <span class="bag__quantity" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">1</span>
-                  <button class="bag__increase-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf"></button>
+                  <button 
+                    class="bag__decrease-btn" 
+                    data-chosenColor="<% if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>" 
+                    data-chosenSize="<% if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>" 
+                    data-quantity="decrease" 
+                    data-identifier="<%-id%>">
+                    <img 
+                    src="img/icons/minus.png" 
+                    alt="Decrease quantity by one" 
+                    class="bag__decrease-sign" 
+                    data-identifier="<%-id%>">
+                  </button>
+                  <span 
+                    class="bag__quantity" 
+                    data-chosenColor="<% if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>" 
+                    data-chosenSize="<% if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>"  
+                    data-identifier="<%-id%>"><%-quantity%></span>
+                  <button 
+                    class="bag__increase-btn" 
+                    data-chosenColor="<% if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>" 
+                    data-chosenSize="<% if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>"  
+                    data-quantity="increase" 
+                    data-identifier="<%-id%>">
+                    <img 
+                    src="img/icons/plus.png" 
+                    alt="Increase quantity by one" 
+                    class="bag__increase-sign" 
+                    data-identifier="<%-id%>">
+                  </button>
                 </div>
               </div>
             </div>
-            <button class="bag__remove-item-btn" data-identifier="8c061815-6a7d-4465-bb78-1bdc6c5adebf">Remove item</button>
+            <button 
+            class="bag__remove-item-btn"
+            data-action="removeItem" 
+            data-chosenColor="<% if (chosenColor) { %><%-chosenColor%><%} else {%>null<% } %>" 
+            data-chosenSize="<% if (chosenSize) { %><%-chosenSize%><%} else {%>null<% } %>" 
+            data-identifier="<%-id%>">Remove item</button>
           </div>
         </div>
-        <div class="bag__item" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">
-          <div class="product">
-            <a href="item.html">
-              <div class="product__thumbnail">
-                <div class="product__overlay" data-hover="2"><span class="product__overlay-text" data-hover="2">Edit item</span></div>
-                <img src="img/products/Paul_&_Joe_Sister_Jumper_with_Neon_Trims.png" alt="Product" class="product__img">
-              </div>
-            </a>
-          </div>
-          <div class="bag__info">
-            <h3 class="bag__item-name" data-hover="2">Paul & Joe Sister Jumper with Neon Trims</h3>
-            <div class="bag__price"><span class="bag__currency">&#163;</span>19.75</div>
-            <div class="bag__description">
-              <div class="bag__heading-color">Color: <span class="bag__color">Blue</span></div>
-              <div class="bag__heading-size">Size: <span class="bag__size">UK 18</span></div>
-              <div class="bag__heading-quantity">Quantity:
-                <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"></button>
-                  <span class="bag__quantity" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">1</span>
-                  <button class="bag__increase-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca"></button>
-                </div>
-              </div>
-            </div>
-            <button class="bag__remove-item-btn" data-identifier="ff665110-5e7f-435d-b1b4-651c3d5050ca">Remove item</button>
-          </div>
-        </div>
-        <div class="bag__item" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">
-          <div class="product">
-            <a href="item.html">
-              <div class="product__thumbnail">
-                <div class="product__overlay" data-hover="3"><span class="product__overlay-text" data-hover="3">Edit item</span></div>
-                <img src="img/products/Boyfriend_T-Shirt_with_Bohemian_Print.png" alt="Product" class="product__img">
-              </div>
-            </a>
-          </div>
-          <div class="bag__info">
-            <h3 class="bag__item-name" data-hover="3">Boyfriend T-Shirt with Bohemian Print</h3>
-            <div class="bag__price"><span class="bag__currency">&#163;</span>90.00</div>
-            <div class="bag__description">
-              <div class="bag__heading-color">Color: <span class="bag__color">Black</span></div>
-              <div class="bag__heading-size">Size: <span class="bag__size">UK 18</span></div>
-              <div class="bag__heading-quantity">Quantity:
-                <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"></button>
-                  <span class="bag__quantity" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">1</span>
-                  <button class="bag__increase-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6"></button>
-                </div>
-              </div>
-            </div>
-            <button class="bag__remove-item-btn" data-identifier="07cf6ce2-6eee-4e78-a441-f257fdea7ed6">Remove item</button>
-          </div>
-        </div>
-        <div class="bag__item" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">
-          <div class="product product--new">
-            <a href="item.html">
-              <div class="product__thumbnail">
-                <div class="product__overlay" data-hover="4"><span class="product__overlay-text" data-hover="4">Edit item</span></div>
-                <img src="img/products/Neck_Knitted_Jumper.png" alt="Product" class="product__img">
-              </div>
-            </a>
-          </div>
-          <div class="bag__info">
-            <h3 class="bag__item-name" data-hover="4">Neck Knitted Jumper</h3>
-            <div class="bag__price"><span class="bag__currency">&#163;</span>76.25</div>
-            <div class="bag__description">
-              <div class="bag__heading-color">Color: <span class="bag__color">Green</span></div>
-              <div class="bag__heading-size">Size: <span class="bag__size">UK 19  </span></div>
-              <div class="bag__heading-quantity">Quantity:
-                <div class="bag__quantity-wrapper">
-                  <button class="bag__decrease-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"><img src="img/icons/minus.png" alt="Decrease quantity by one" class="bag__decrease-sign" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"></button>
-                  <span class="bag__quantity" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">1</span>
-                  <button class="bag__increase-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"><img src="img/icons/plus.png" alt="Increase quantity by one" class="bag__increase-sign" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469"></button>
-                </div>
-              </div>
-            </div>
-            <button class="bag__remove-item-btn" data-identifier="8b300772-eee3-4ff1-b091-e89f17e0e469">Remove item</button>
-          </div>
-        </div>
-      </div>
+      </script>
     </div>
 
-    <div class="bag-promo" id="bag-promo">
+    <div class="bag-promo" id="checkout-section">
       <div class="lines">
         <div class="lines__left lines__left--top"></div>
         <div class="lines__left lines__left--bottom hide"></div>
@@ -224,16 +209,16 @@
         </div>
         <div class="container">
           <div class="bag__checkout-wrapper">
-            <button class="bag__empty-btn">Empty bag</button>
+            <button class="bag__empty-btn" data-action="removeAllItems">Empty bag</button>
             <div class="bag__checkout-btn-wrapper">
-              <button class="button button--checkout">Checkout</button>
+              <button class="button button--checkout" data-action="checkout">Checkout</button>
             </div>
             <div class="bag__total-price-wrapper">
-              <div class="bag__discount">
+              <div class="bag__discount display-none">
                 Applied discount: <span class="bag__discount-currency">&#163;</span><span class="bag__discount-price">15.00</span>
               </div>
               <div class="bag__total">
-                Total price: <span class="bag__total-currency">&#163;</span><span class="bag__total-price" id="total-price-checkout">236.50</span>
+                Total price: <span class="bag__total-currency">&#163;</span><span class="bag__total-price" id="total-price-checkout"></span>
               </div>
             </div>
           </div>
@@ -383,8 +368,8 @@
   </div>
 
   <script src="data/catalog.js"></script>
-  <script src="js/bag.js"></script>
-  <script src="js/shopping-bag-page.js"></script>
+  <script src="js/lodash.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/shopping-bag-page.js"></script>
 </body>
 </html>
